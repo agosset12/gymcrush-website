@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — GymCrush</title>
+    <meta name="description" content="Get help with GymCrush. FAQs, troubleshooting, and contact information.">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFF8EF;
+            --surface: #FFFCF7;
+            --surface-soft: #FFF0E4;
+            --border: #EFDCCB;
+            --text: #14213A;
+            --text-muted: #8F8178;
+            --primary: #F66F7D;
+            --primary-dark: #D94F5F;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.75;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        header {
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .brand-link img {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .brand-link span {
+            font-family: 'Rubik', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .content h1 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 48px;
+        }
+
+        .content h2 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .content h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        .content p {
+            color: #4B5563;
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            margin-bottom: 14px;
+        }
+
+        .content li {
+            color: #4B5563;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .content a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .content a:hover { text-decoration: underline; }
+
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            border-radius: 16px;
+        }
+
+        .faq-item h3 {
+            color: var(--text);
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .contact-box {
+            background: var(--text);
+            color: white;
+            padding: 36px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-family: 'Rubik', sans-serif;
+            color: white;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .contact-box p {
+            color: #B9C0CC;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .contact-box a {
+            display: inline-block;
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 13px 30px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .contact-box a:hover { background: var(--primary-dark); }
+
+        footer {
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-copyright { font-size: 13px; color: var(--text-muted); }
+
+        .footer-links-bottom {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links-bottom a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links-bottom a:hover { color: var(--primary); }
+
+        @media (max-width: 600px) {
+            header { padding: 16px 20px; }
+            .content { padding: 40px 20px 60px; }
+            .content h1 { font-size: 30px; }
+            .nav-links { gap: 16px; }
+            .contact-box { padding: 28px 20px; }
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 20px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand-link">
+            <img src="icon.png" alt="GymCrush">
+            <span>GymCrush</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </header>
+
+    <section class="content">
+        <h1>Support</h1>
+        <p class="subtitle">We're here to help you and your partner get the most out of GymCrush.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>How do I get started?</h3>
+            <p>Create an account, set up your profile, and pick a starter companion. Then invite your partner with your pairing code or link. Once you're paired, complete your daily tasks to start building your shared streak.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I pair with my partner?</h3>
+            <p>Open the menu and share your invite code or link with your partner. When they accept, your two accounts are linked and you'll share one streak, one coin balance, and one collection. You can unpair at any time from the app.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does the shared streak work?</h3>
+            <p>GymCrush uses a single couple streak. Each day, both partners complete daily tasks, and once your combined progress reaches the daily goal, your streak is protected and ticks up by one. If the goal isn't met, the streak is at risk.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is Team Assist?</h3>
+            <p>Team Assist merges both partners' daily goals into one shared bar. Instead of each person needing to finish separately, your combined completions count toward a single goal — so if one of you has a busy day, the other can help carry the streak.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is a Streak Freeze?</h3>
+            <p>A Streak Freeze protects your couple streak when you can't hit the daily goal. When armed, it acts as a shield so a missed day doesn't reset your streak. You can earn or buy freezes and arm one ahead of a day you know will be tough.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do coins and chests work?</h3>
+            <p>You earn shared coins by completing tasks and keeping your streak. Spend them on reward chests and shop items. Chests are randomized — opening one reveals a companion, accessory, background, or consumable, with different rarities.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I collect and equip mascots?</h3>
+            <p>Companions you unlock are added to your shared collection. From the Collection tab you can browse what you've found and equip a mascot to show on your home screen. Both you and your partner can have your own equipped companion.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's the difference between Free and Premium?</h3>
+            <p>The core couple experience — pairing, shared streak, daily tasks, coins, and chests — is free. Premium unlocks extra benefits and can apply to both partners as a couple ("pair") premium. You'll see exactly what's included in the app before purchasing.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I manage notifications?</h3>
+            <p>Go to the Settings area in the app to customize reminders, or manage permissions in your device Settings. Notifications help nudge you when your streak is at risk so you don't lose your progress.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I cancel my subscription?</h3>
+            <p>Subscriptions are managed through the App Store. Go to Settings → Your Name → Subscriptions → GymCrush → Cancel Subscription.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I delete my account and data?</h3>
+            <p>You can delete your account from within the app. This removes your personal account data and resets your analytics identifier. Some shared couple data may remain with your partner's account where it's part of their record. For questions, contact us at <a href="mailto:gosset.dev@gmail.com">gosset.dev@gmail.com</a>.</p>
+        </div>
+
+        <h2>Privacy &amp; Data</h2>
+
+        <div class="faq-item">
+            <h3>What data does GymCrush collect?</h3>
+            <p>Because GymCrush is a couples app, your account, shared streak, coins, and collection are stored in the cloud and shared with your paired partner. We use Supabase for accounts and game data, PostHog for anonymous analytics, RevenueCat for subscriptions, and Apple for payments. For full details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does GymCrush track me or sell my data?</h3>
+            <p>No. We do not use advertising trackers, do not request the iOS tracking permission (IDFA/ATT), and do not sell your data. Our analytics are used solely to improve the app.</p>
+        </div>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>My streak or coins didn't sync with my partner</h3>
+        <ul>
+            <li>Make sure both of you are on the latest version of the app</li>
+            <li>Check that you both have an internet connection — shared data syncs through our servers</li>
+            <li>Pull to refresh or reopen the app to force a sync</li>
+            <li>Confirm you're still paired with the right partner in the menu</li>
+        </ul>
+
+        <h3>Pairing isn't working</h3>
+        <ul>
+            <li>Make sure your partner is using a fresh, unexpired invite code or link</li>
+            <li>Only one active pairing is supported at a time — unpair from any previous partner first</li>
+            <li>Both accounts need to be signed in and online to complete pairing</li>
+        </ul>
+
+        <h3>App crashes or freezes</h3>
+        <ul>
+            <li>Make sure you have the latest version installed</li>
+            <li>Force-close the app and reopen it</li>
+            <li>Restart your device</li>
+            <li>If the issue persists, contact us with details about when it happens</li>
+        </ul>
+
+        <h3>A purchase didn't go through</h3>
+        <ul>
+            <li>Check your internet connection and try restoring purchases from the app's settings</li>
+            <li>Confirm the purchase completed in your Apple ID account</li>
+            <li>If coins or items are missing after a confirmed purchase, contact us with your receipt details</li>
+        </ul>
+
+        <div class="contact-box">
+            <h2>Still need help?</h2>
+            <p>Can't find the answer you're looking for? We typically respond within 24–48 hours.</p>
+            <a href="mailto:gosset.dev@gmail.com">Contact Support</a>
+        </div>
+
+        <h2>Feature Requests &amp; Feedback</h2>
+        <p>We love hearing from couples using GymCrush. If you have ideas for new features or companions, reach out:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:gosset.dev@gmail.com">gosset.dev@gmail.com</a></li>
+        </ul>
+
+        <h2>Report a Bug</h2>
+        <p>Found a bug? Help us improve by reporting it:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:gosset.dev@gmail.com">gosset.dev@gmail.com</a></li>
+            <li><strong>Include:</strong> Your device model, OS version, app version, and steps to reproduce</li>
+        </ul>
+
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><strong>Compatibility:</strong> iOS 16+</li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="footer-copyright">&copy; 2026 GymCrush</div>
+        <div class="footer-links-bottom">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="support.html">Support</a>
+        </div>
+    </footer>
+</body>
+</html>
