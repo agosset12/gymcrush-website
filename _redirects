@@ -1,8 +1,13 @@
 # Invite links are /invite/<one-time-token>. On a device with the app installed
-# iOS intercepts these as universal links and the page is never fetched; this
+# iOS intercepts these as universal links and this page is never fetched; the
 # rewrite is the fallback for everyone else (Android, desktop, app not yet
 # installed), serving one landing page for any token.
 #
 # Status 200 makes this a REWRITE, not a redirect — deliberate, since a 3xx on
-# an invite URL would also break the universal-link handoff.
-/invite/*  /invite/index.html  200
+# an invite URL would break the universal-link handoff.
+#
+# The destination deliberately lives OUTSIDE /invite/. Pointing it at
+# /invite/index.html made the target match the /invite/* pattern itself, which
+# Cloudflare drops as a possible rewrite loop — the rule silently never applied
+# and every token fell through to the homepage.
+/invite/*  /invite-landing.html  200
