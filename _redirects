@@ -1,0 +1,8 @@
+# Invite links are /invite/<one-time-token>. On a device with the app installed
+# iOS intercepts these as universal links and the page is never fetched; this
+# rewrite is the fallback for everyone else (Android, desktop, app not yet
+# installed), serving one landing page for any token.
+#
+# Status 200 makes this a REWRITE, not a redirect — deliberate, since a 3xx on
+# an invite URL would also break the universal-link handoff.
+/invite/*  /invite/index.html  200

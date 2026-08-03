@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're invited to GymCrush</title>
+    <meta name="description" content="Your partner invited you to train together on GymCrush.">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <meta property="og:title" content="Your partner invited you to GymCrush">
+    <meta property="og:description" content="One shared streak. Two people showing up.">
+    <meta property="og:image" content="/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFF8EF;
+            --surface: #FFFCF7;
+            --border: #EFDCCB;
+            --text: #14213A;
+            --text-muted: #8F8178;
+            --primary: #F66F7D;
+            --primary-dark: #D94F5F;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background:
+                radial-gradient(120% 80% at 50% -10%, #FFECEE 0%, rgba(255,236,238,0) 55%),
+                var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            box-shadow: 0 12px 30px rgba(246, 111, 125, 0.22);
+        }
+
+        h1 {
+            font-size: clamp(28px, 7vw, 40px);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-top: 26px;
+            line-height: 1.15;
+        }
+
+        p.lede {
+            color: var(--text-muted);
+            font-size: 17px;
+            font-weight: 500;
+            margin-top: 14px;
+            max-width: 30ch;
+            line-height: 1.5;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 16px 34px;
+            border-radius: 18px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(246, 111, 125, 0.32);
+        }
+
+        .cta:active { background: var(--primary-dark); }
+
+        .steps {
+            margin-top: 34px;
+            padding: 20px 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            max-width: 340px;
+            text-align: left;
+        }
+
+        .steps h2 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .steps ol { margin-left: 18px; }
+
+        .steps li {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        footer {
+            margin-top: 34px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        footer a { color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="/icon.png" alt="GymCrush" class="app-icon">
+
+        <h1>Your partner<br>invited you</h1>
+        <p class="lede">One shared streak. You both show up, or neither of you does.</p>
+
+        <!-- TODO: swap for the real listing once GymCrush is live on the App Store. -->
+        <a class="cta" href="https://apps.apple.com/app/id0000000000">Get GymCrush</a>
+
+        <div class="steps">
+            <h2>Then</h2>
+            <ol>
+                <li>Open GymCrush and tap <strong>“My partner sent me a code”</strong>.</li>
+                <li>Tap your partner’s invite link again — it connects you instantly.</li>
+                <li>No link? Ask them for their 6-character code instead.</li>
+            </ol>
+        </div>
+
+        <footer>
+            <a href="/">GymCrush</a> · <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a>
+        </footer>
+    </main>
+</body>
+</html>

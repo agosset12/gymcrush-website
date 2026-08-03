@@ -1,0 +1,9 @@
+# Apple refuses to validate the app-site-association file unless it is served
+# as JSON. It has no file extension, so Cloudflare would otherwise guess
+# text/plain and universal links would silently never activate.
+#
+# Two further rules Apple enforces, both satisfied by serving it as a plain
+# static file here: no redirects on this path, and no authentication.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
