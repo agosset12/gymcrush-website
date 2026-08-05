@@ -391,6 +391,13 @@
             <button class="carousel-btn" id="nextBtn" aria-label="Next screenshot">&#8250;</button>
         </div>
 
+        <!-- Deliberately inert until the listing is public — a live href would 404
+             on the public site. On launch day, swap the div for:
+             <a class="store-badge" href="https://apps.apple.com/app/id6766544775">
+               <span class="apple">&#63743;</span>
+               <span>Download <span class="muted">on the App Store</span></span>
+             </a>
+             and drop `cursor: default` from .store-badge. -->
         <div class="store-badge" aria-label="Coming soon to the App Store">
             <span class="apple">&#63743;</span>
             <span>Coming soon <span class="muted">to the App Store</span></span>
