@@ -43,7 +43,16 @@
 
 # Invite URLs contain a one-time token. Keep them out of shared caches and
 # stop the token leaking through the Referer header to the App Store.
+#
+# Cloudflare's clean-URL handling turns the /invite/* rewrite into a 308 to
+# /invite-landing, and headers set here do NOT carry across that redirect — so
+# the destination needs the same treatment, not just the token URL.
 /invite/*
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+
+/invite-landing*
   Cache-Control: no-store
   Referrer-Policy: no-referrer
   X-Robots-Tag: noindex, nofollow
