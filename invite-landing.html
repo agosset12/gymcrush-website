@@ -5,32 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You're invited to GymCrush</title>
     <meta name="description" content="Your partner invited you to train together on GymCrush.">
-    <link rel="icon" type="image/png" href="/icon.png">
+    <meta name="theme-color" content="#FFF8EF">
+
+    <!-- Invite URLs carry a one-time token. Keep them out of search results. -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Your partner invited you to GymCrush">
     <meta property="og:description" content="One shared streak. Two people showing up.">
-    <meta property="og:image" content="/icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <meta property="og:image" content="https://gymcrush.pages.dev/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="/styles.css">
     <style>
-        :root {
-            --bg: #FFF8EF;
-            --surface: #FFFCF7;
-            --border: #EFDCCB;
-            --text: #14213A;
-            --text-muted: #8F8178;
-            --primary: #F66F7D;
-            --primary-dark: #D94F5F;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background:
-                radial-gradient(120% 80% at 50% -10%, #FFECEE 0%, rgba(255,236,238,0) 55%),
+                radial-gradient(120% 80% at 50% -10%, #FFECEE 0%, rgba(255, 236, 238, 0) 55%),
                 var(--bg);
-            color: var(--text);
             min-height: 100vh;
         }
 
@@ -40,7 +36,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 40px 24px;
+            padding: 44px 24px;
             text-align: center;
         }
 
@@ -59,70 +55,88 @@
             line-height: 1.15;
         }
 
-        p.lede {
-            color: var(--text-muted);
-            font-size: 17px;
-            font-weight: 500;
+        .lede {
             margin-top: 14px;
-            max-width: 30ch;
-            line-height: 1.5;
+            color: var(--text-muted);
+            font-size: 16.5px;
+            max-width: 340px;
+            line-height: 1.6;
         }
 
         .cta {
-            display: inline-block;
             margin-top: 30px;
-            padding: 16px 34px;
-            border-radius: 18px;
+            display: inline-block;
             background: var(--primary);
-            color: #fff;
-            font-size: 17px;
-            font-weight: 700;
+            color: #FFF;
             text-decoration: none;
-            box-shadow: 0 10px 24px rgba(246, 111, 125, 0.32);
+            font-weight: 700;
+            font-size: 17px;
+            padding: 16px 38px;
+            border-radius: 18px;
+            box-shadow: 0 8px 22px rgba(246, 111, 125, 0.34);
+            transition: transform 0.15s, background 0.2s;
         }
 
-        .cta:active { background: var(--primary-dark); }
+        .cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
 
         .steps {
-            margin-top: 34px;
-            padding: 20px 22px;
+            margin-top: 40px;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 20px;
-            max-width: 340px;
+            padding: 24px 26px;
+            max-width: 400px;
             text-align: left;
+            box-shadow: var(--shadow-sm);
         }
 
         .steps h2 {
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             color: var(--text-muted);
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
-        .steps ol { margin-left: 18px; }
-
-        .steps li {
-            font-size: 15px;
-            font-weight: 500;
-            line-height: 1.6;
-            margin-bottom: 6px;
+        .steps ol {
+            margin: 0;
+            padding-left: 20px;
         }
 
-        footer {
-            margin-top: 34px;
+        .steps li {
+            color: var(--text-body);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 9px;
+        }
+
+        .steps li:last-child {
+            margin-bottom: 0;
+        }
+
+        .page-footer {
+            margin-top: 38px;
             font-size: 13px;
             color: var(--text-muted);
         }
 
-        footer a { color: var(--text-muted); }
+        .page-footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .page-footer a:hover {
+            color: var(--primary-dark);
+        }
     </style>
 </head>
 <body>
     <main>
-        <img src="/icon.png" alt="GymCrush" class="app-icon">
+        <img src="/icon.png" alt="GymCrush" class="app-icon" width="512" height="512">
 
         <h1>Your partner<br>invited you</h1>
         <p class="lede">One shared streak. You both show up, or neither of you does.</p>
@@ -139,9 +153,12 @@
             </ol>
         </div>
 
-        <footer>
-            <a href="/">GymCrush</a> · <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a>
-        </footer>
+        <p class="page-footer">
+            <a href="/">GymCrush</a> &middot;
+            <a href="/privacy.html">Privacy</a> &middot;
+            <a href="/terms.html">Terms</a> &middot;
+            <a href="/support.html">Support</a>
+        </p>
     </main>
 </body>
 </html>

@@ -3,51 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GymCrush — Get fit together</title>
-    <meta name="description" content="A cute, gamified fitness app for couples. Complete daily tasks, keep one shared streak, and unlock collectible companions together.">
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #FFF8EF;
-            --surface: #FFFCF7;
-            --surface-soft: #FFF0E4;
-            --border: #EFDCCB;
-            --text: #14213A;
-            --text-muted: #8F8178;
-            --primary: #F66F7D;
-            --primary-dark: #D94F5F;
-            --accent: #EC7591;
-            --mint: #7BCBB8;
-            --gold: #F7C95D;
-        }
+    <title>GymCrush — Two hearts. One streak.</title>
+    <meta name="description" content="The gamified fitness app for couples. Complete daily tasks together, keep one shared streak, and unlock collectible companions as a pair.">
+    <link rel="canonical" href="https://gymcrush.pages.dev/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFF8EF">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GymCrush">
+    <meta property="og:title" content="GymCrush — Two hearts. One streak.">
+    <meta property="og:description" content="The gamified fitness app for couples. Train together, keep one shared streak, and unlock collectible companions.">
+    <meta property="og:url" content="https://gymcrush.pages.dev/">
+    <meta property="og:image" content="https://gymcrush.pages.dev/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="GymCrush — two hearts, one streak. The gamified fitness app for couples.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GymCrush — Two hearts. One streak.">
+    <meta name="twitter:description" content="The gamified fitness app for couples.">
+    <meta name="twitter:image" content="https://gymcrush.pages.dev/assets/og-image.png">
+
+    <!-- ═══ LAUNCH DAY ═══════════════════════════════════════════════════
+         When the App Store listing goes public, do these two things:
+           1. Uncomment the smart-banner meta tag below.
+           2. In the hero, swap the .store-badge <div> for the <a> kept in
+              the comment beside it.
+         Both are inert right now because the listing 404s until release.
+         <meta name="apple-itunes-app" content="app-id=6766544775">
+         ═════════════════════════════════════════════════════════════════ -->
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Landing-page-only styles. Everything shared lives in styles.css. */
 
         body {
-            font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background:
-                radial-gradient(120% 80% at 50% -10%, #FFECEE 0%, rgba(255,236,238,0) 55%),
+                radial-gradient(120% 80% at 50% -10%, #FFECEE 0%, rgba(255, 236, 238, 0) 55%),
                 var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
-        main {
+        .hero {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 56px 24px 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 24px;
+            text-align: center;
         }
 
         .brand {
@@ -57,12 +63,12 @@
         }
 
         .app-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 22px;
+            width: 84px;
+            height: 84px;
+            border-radius: 23px;
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: 0 6px 18px rgba(20, 33, 58, 0.10);
+            box-shadow: var(--shadow-md);
             flex-shrink: 0;
         }
 
@@ -70,27 +76,24 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .app-name {
-            font-family: 'Rubik', sans-serif;
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 900;
-            color: var(--text);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.6px;
         }
 
         .tagline {
-            text-align: center;
-            margin-top: 24px;
+            margin-top: 26px;
         }
 
         .tagline-line {
-            font-family: 'Rubik', sans-serif;
-            font-size: 44px;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -1px;
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1.6px;
             display: block;
         }
 
@@ -99,32 +102,40 @@
         }
 
         .subtagline {
-            margin-top: 14px;
-            font-size: 16px;
+            margin-top: 16px;
+            font-size: 17px;
             color: var(--text-muted);
-            max-width: 360px;
-            text-align: center;
-            line-height: 1.5;
+            max-width: 440px;
+            line-height: 1.6;
         }
 
         .store-badge {
-            margin-top: 28px;
-            margin-bottom: 0;
+            margin-top: 30px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 9px;
             background: var(--text);
             color: #FFFFFF;
-            padding: 14px 24px;
-            border-radius: 16px;
-            font-size: 15px;
+            padding: 15px 26px;
+            border-radius: var(--radius);
+            font-size: 15.5px;
             font-weight: 600;
             box-shadow: 0 6px 18px rgba(20, 33, 58, 0.18);
+            text-decoration: none;
             cursor: default;
         }
 
+        a.store-badge {
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        a.store-badge:hover {
+            transform: translateY(-2px);
+        }
+
         .store-badge .apple {
-            font-size: 18px;
+            font-size: 19px;
             line-height: 1;
         }
 
@@ -133,13 +144,11 @@
             font-weight: 500;
         }
 
-        /* ── iPhone Carousel ── */
+        /* ── Screenshot carousel ── */
 
         .phone-section {
-            margin-top: 32px;
-            position: relative;
+            margin-top: 44px;
             width: 100%;
-            max-width: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -147,12 +156,10 @@
         }
 
         .carousel-column {
-            flex: 1 1 auto;
-            min-width: 0;
-            max-width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-width: 0;
         }
 
         .carousel-btn {
@@ -167,7 +174,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s;
+            transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
             flex-shrink: 0;
         }
 
@@ -178,16 +185,13 @@
         }
 
         .screenshot-carousel {
-            width: min(230px, calc(100vw - 120px));
-            flex-shrink: 0;
+            width: min(248px, calc(100vw - 120px));
             position: relative;
             border: 1px solid var(--border);
             background: var(--surface);
-            border-radius: 36px;
+            border-radius: 38px;
             overflow: hidden;
-            box-shadow:
-                0 18px 42px rgba(20, 33, 58, 0.14),
-                0 4px 12px rgba(20, 33, 58, 0.08);
+            box-shadow: var(--shadow-lg), var(--shadow-sm);
         }
 
         .screenshot-carousel-inner {
@@ -201,25 +205,19 @@
 
         .screenshot-track {
             position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             display: flex;
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .screenshot-slide {
             flex: 0 0 100%;
-            width: 100%;
-            height: 100%;
             position: relative;
         }
 
         .screenshot-slide img {
             position: absolute;
-            left: 0;
-            top: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             display: block;
@@ -235,10 +233,13 @@
         }
 
         .carousel-dot {
-            width: 8px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border: none;
             border-radius: 50%;
             background: var(--border);
+            cursor: pointer;
             transition: background 0.3s, transform 0.3s;
         }
 
@@ -247,213 +248,373 @@
             transform: scale(1.25);
         }
 
-        /* ── Footer ── */
+        /* ── Content sections ── */
 
-        footer {
-            padding: 24px 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        section.band {
+            padding: 68px 24px;
+        }
+
+        section.band.soft {
+            background: var(--surface);
             border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-        .footer-copyright {
-            font-size: 13px;
+        .band-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .band h2 {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .band .band-lede {
+            text-align: center;
             color: var(--text-muted);
+            font-size: 16.5px;
+            max-width: 520px;
+            margin: 0 auto 44px;
         }
 
-        .footer-links {
-            display: flex;
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
         }
 
-        .footer-links a {
-            font-size: 13px;
+        .step {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .step-num {
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #FFF;
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 14px rgba(246, 111, 125, 0.32);
+        }
+
+        .step h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .step p {
+            color: var(--text-body);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .feature {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 26px 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        section.band.soft .feature {
+            background: var(--bg);
+        }
+
+        .feature-emoji {
+            font-size: 28px;
+            line-height: 1;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .feature p {
+            color: var(--text-body);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        /* ── Trust strip ── */
+
+        .trust {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item .mark {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .trust-item h3 {
+            font-size: 15.5px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .trust-item p {
             color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        .footer-links a:hover {
-            color: var(--primary);
+        .band-cta {
+            text-align: center;
+            margin-top: 40px;
         }
 
-        /* ── Responsive ── */
+        .band-cta a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 15px;
+        }
 
-        @media (max-width: 600px) {
-            main {
-                min-height: 100svh;
-                min-height: 100dvh;
-                padding: max(16px, env(safe-area-inset-top, 0px)) 16px calc(32px + env(safe-area-inset-bottom, 0px));
-                justify-content: flex-start;
-                gap: 0;
+        @media (max-width: 700px) {
+            .hero {
+                padding: 34px 18px 26px;
             }
 
             .app-icon {
-                width: 56px;
-                height: 56px;
-                border-radius: 16px;
-            }
-
-            .brand {
-                gap: 10px;
+                width: 62px;
+                height: 62px;
+                border-radius: 17px;
             }
 
             .app-name {
-                font-size: 24px;
+                font-size: 25px;
             }
 
             .tagline {
-                margin-top: 14px;
+                margin-top: 18px;
             }
 
             .tagline-line {
-                font-size: 30px;
+                font-size: 34px;
+                letter-spacing: -1px;
             }
 
             .subtagline {
-                font-size: 14px;
-                margin-top: 10px;
-            }
-
-            .phone-section {
-                margin-top: 18px;
-                gap: 8px;
-                max-width: 100%;
-            }
-
-            .screenshot-carousel {
-                width: min(calc(100vw - 72px), 280px);
-            }
-
-            .carousel-dots {
+                font-size: 15px;
                 margin-top: 12px;
             }
 
-            .carousel-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 15px;
-            }
-
             .store-badge {
-                margin-top: 18px;
-                margin-bottom: 8px;
+                margin-top: 22px;
             }
 
-            footer {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-                padding: 20px 24px calc(20px + env(safe-area-inset-bottom, 0px));
+            .phone-section {
+                margin-top: 30px;
+                gap: 8px;
+            }
+
+            .screenshot-carousel {
+                width: min(calc(100vw - 76px), 280px);
+            }
+
+            .carousel-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 16px;
+            }
+
+            section.band {
+                padding: 46px 18px;
+            }
+
+            .band h2 {
+                font-size: 25px;
+            }
+
+            .band .band-lede {
+                font-size: 15px;
+                margin-bottom: 32px;
             }
         }
     </style>
 </head>
 <body>
-    <main>
-        <div class="brand">
-            <div class="app-icon">
-                <img src="icon.png" alt="GymCrush app icon">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main">
+        <div class="hero">
+            <div class="brand">
+                <div class="app-icon">
+                    <img src="icon.png" alt="GymCrush app icon" width="512" height="512">
+                </div>
+                <div class="app-name">GymCrush</div>
             </div>
-            <div class="app-name">GymCrush</div>
-        </div>
 
-        <div class="tagline">
-            <span class="tagline-line">Two hearts.</span>
-            <span class="tagline-line accent">One streak.</span>
-        </div>
+            <h1 class="tagline">
+                <span class="tagline-line">Two hearts.</span>
+                <span class="tagline-line accent">One streak.</span>
+            </h1>
 
-        <p class="subtagline">The cute, gamified fitness app for couples. Train together, keep one shared streak, and unlock collectible companions as you go.</p>
+            <p class="subtagline">The gamified fitness app for couples. Train together, keep one shared streak, and unlock collectible companions as you go.</p>
 
-        <div class="phone-section">
-            <button class="carousel-btn" id="prevBtn" aria-label="Previous screenshot">&#8249;</button>
-            <div class="carousel-column">
-                <div class="screenshot-carousel">
-                    <div class="screenshot-carousel-inner">
-                        <div class="screenshot-track" id="screenshotTrack">
-                            <div class="screenshot-slide"><img src="screenshots/01.png" alt="GymCrush app screenshot 1"></div>
-                            <div class="screenshot-slide"><img src="screenshots/02.png" alt="GymCrush app screenshot 2"></div>
-                            <div class="screenshot-slide"><img src="screenshots/03.png" alt="GymCrush app screenshot 3"></div>
-                            <div class="screenshot-slide"><img src="screenshots/04.png" alt="GymCrush app screenshot 4"></div>
-                            <div class="screenshot-slide"><img src="screenshots/05.png" alt="GymCrush app screenshot 5"></div>
+            <!-- LAUNCH DAY: replace this <div> with the <a> below it.
+                 <a class="store-badge" href="https://apps.apple.com/app/id6766544775">
+                     <span class="apple" aria-hidden="true">&#63743;</span>
+                     <span>Download <span class="muted">on the App Store</span></span>
+                 </a> -->
+            <div class="store-badge" role="text" aria-label="Coming soon to the App Store">
+                <span class="apple" aria-hidden="true">&#63743;</span>
+                <span>Coming soon <span class="muted">to the App Store</span></span>
+            </div>
+
+            <div class="phone-section">
+                <button class="carousel-btn" id="prevBtn" type="button" aria-label="Previous screenshot">&#8249;</button>
+                <div class="carousel-column">
+                    <div class="screenshot-carousel">
+                        <div class="screenshot-carousel-inner">
+                            <div class="screenshot-track" id="screenshotTrack">
+                                <div class="screenshot-slide"><img src="screenshots/01.png" alt="GymCrush home screen with both partners' companions" width="1290" height="2796"></div>
+                                <div class="screenshot-slide"><img src="screenshots/02.png" alt="Daily tasks and the shared streak" width="1290" height="2796" loading="lazy"></div>
+                                <div class="screenshot-slide"><img src="screenshots/03.png" alt="Opening a reward chest" width="1290" height="2796" loading="lazy"></div>
+                                <div class="screenshot-slide"><img src="screenshots/04.png" alt="The companion collection" width="1290" height="2796" loading="lazy"></div>
+                                <div class="screenshot-slide"><img src="screenshots/05.png" alt="Progress and streak statistics" width="1290" height="2796" loading="lazy"></div>
+                            </div>
                         </div>
                     </div>
+                    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose screenshot">
+                        <button class="carousel-dot active" type="button" role="tab" aria-label="Screenshot 1" aria-selected="true"></button>
+                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 2" aria-selected="false"></button>
+                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 3" aria-selected="false"></button>
+                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 4" aria-selected="false"></button>
+                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 5" aria-selected="false"></button>
+                    </div>
                 </div>
-                <div class="carousel-dots" id="carouselDots">
-                    <div class="carousel-dot active"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                </div>
+                <button class="carousel-btn" id="nextBtn" type="button" aria-label="Next screenshot">&#8250;</button>
             </div>
-            <button class="carousel-btn" id="nextBtn" aria-label="Next screenshot">&#8250;</button>
         </div>
 
-        <!-- Deliberately inert until the listing is public — a live href would 404
-             on the public site. On launch day, swap the div for:
-             <a class="store-badge" href="https://apps.apple.com/app/id6766544775">
-               <span class="apple">&#63743;</span>
-               <span>Download <span class="muted">on the App Store</span></span>
-             </a>
-             and drop `cursor: default` from .store-badge. -->
-        <div class="store-badge" aria-label="Coming soon to the App Store">
-            <span class="apple">&#63743;</span>
-            <span>Coming soon <span class="muted">to the App Store</span></span>
-        </div>
+        <section class="band soft">
+            <div class="band-inner">
+                <h2>How it works</h2>
+                <p class="band-lede">Three steps, then it is just the two of you showing up every day.</p>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num" aria-hidden="true">1</div>
+                        <h3>Pair with your partner</h3>
+                        <p>Send them an invite link or a 6-character code. One tap and your two accounts are linked.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num" aria-hidden="true">2</div>
+                        <h3>Finish your daily tasks</h3>
+                        <p>Pick challenges that fit your day. Your progress and theirs both count toward the same goal.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num" aria-hidden="true">3</div>
+                        <h3>Keep the streak alive</h3>
+                        <p>Hit the goal together and your shared streak ticks up. Miss it and you both feel it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="band">
+            <div class="band-inner">
+                <h2>Built for two</h2>
+                <p class="band-lede">Every mechanic in GymCrush assumes there are two of you. That is the whole point.</p>
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-emoji" aria-hidden="true">🔥</span>
+                        <h3>One shared streak</h3>
+                        <p>Not one streak each — one between you. It survives only if you both show up, which is exactly the pressure that works.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-emoji" aria-hidden="true">🤝</span>
+                        <h3>Team Assist</h3>
+                        <p>Both daily goals merge into a single bar. When one of you has a brutal day, the other can carry it.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-emoji" aria-hidden="true">🛡️</span>
+                        <h3>Streak Freeze</h3>
+                        <p>Life happens. Arm a freeze before a day you know is lost and your streak survives it intact.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-emoji" aria-hidden="true">🥚</span>
+                        <h3>Collectible companions</h3>
+                        <p>Earn coins together and hatch them into a shared collection of characters. Equip your favourite; they will see it.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-emoji" aria-hidden="true">📸</span>
+                        <h3>Moments &amp; widget</h3>
+                        <p>Send a photo straight to your partner's home screen. Private to the two of you, and entirely optional.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-emoji" aria-hidden="true">💞</span>
+                        <h3>One subscription, both of you</h3>
+                        <p>Premium is priced per couple, not per person. If one of you subscribes, you both get it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="band soft">
+            <div class="band-inner">
+                <h2>Where we stand on your data</h2>
+                <p class="band-lede">A couples app holds intimate things. Here is our position, in plain terms.</p>
+                <div class="trust">
+                    <div class="trust-item">
+                        <span class="mark" aria-hidden="true">🚫</span>
+                        <h3>No ads, ever</h3>
+                        <p>No advertising trackers, no IDFA, no App Tracking Transparency prompt — because we do not track you across other apps.</p>
+                    </div>
+                    <div class="trust-item">
+                        <span class="mark" aria-hidden="true">🔒</span>
+                        <h3>Your photos stay yours</h3>
+                        <p>Moments are readable only by you and your partner, enforced on the server. We never scan them or train models on them.</p>
+                    </div>
+                    <div class="trust-item">
+                        <span class="mark" aria-hidden="true">🍏</span>
+                        <h3>No Apple Health access</h3>
+                        <p>We never connect to Apple Health. The only activity data we hold is what you tell the app yourself.</p>
+                    </div>
+                </div>
+                <p class="band-cta"><a href="privacy.html">Read the full privacy policy →</a></p>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-copyright">&copy; 2026 GymCrush</div>
+        <div class="footer-copyright">&copy; 2026 GymCrush &middot; Made by Antoine Gosset</div>
         <div class="footer-links">
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
             <a href="support.html">Support</a>
+            <a href="mailto:gosset.dev@gmail.com">Contact</a>
         </div>
     </footer>
 
-    <script>
-        (function () {
-            var current = 0;
-            var total = document.querySelectorAll('.screenshot-slide').length;
-            var track = document.getElementById('screenshotTrack');
-            var dots = document.querySelectorAll('.carousel-dot');
-
-            function goTo(index) {
-                if (index < 0) index = total - 1;
-                if (index >= total) index = 0;
-                current = index;
-                track.style.transform = 'translateX(-' + (current * 100) + '%)';
-                dots.forEach(function (dot, i) {
-                    dot.classList.toggle('active', i === current);
-                });
-            }
-
-            document.getElementById('prevBtn').addEventListener('click', function () {
-                goTo(current - 1);
-            });
-
-            document.getElementById('nextBtn').addEventListener('click', function () {
-                goTo(current + 1);
-            });
-
-            dots.forEach(function (dot, i) {
-                dot.addEventListener('click', function () { goTo(i); });
-            });
-
-            var startX = 0;
-            var screen = document.querySelector('.screenshot-carousel');
-            screen.addEventListener('touchstart', function (e) {
-                startX = e.touches[0].clientX;
-            }, { passive: true });
-            screen.addEventListener('touchend', function (e) {
-                var diff = startX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) {
-                    goTo(current + (diff > 0 ? 1 : -1));
-                }
-            }, { passive: true });
-        })();
-    </script>
+    <script src="carousel.js" defer></script>
 </body>
 </html>

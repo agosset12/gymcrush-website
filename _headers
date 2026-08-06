@@ -1,3 +1,29 @@
+# Cloudflare Pages response headers.
+#
+# Rules are matched per path and merged, so the site-wide /* block below applies
+# to the association file too — the specific rule only adds to it.
+
+/*
+  # This site loads nothing from anywhere else: no CDN, no analytics, no
+  # embedded fonts, no third-party scripts. The policy says exactly that, so an
+  # injected <script src> or exfiltration request has nowhere to go.
+  #
+  # 'unsafe-inline' is needed for style-src only, because the pages carry inline
+  # <style> blocks. Scripts have no such exemption — the carousel lives in
+  # carousel.js precisely so script-src can stay strict.
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; upgrade-insecure-requests
+  # Stop browsers guessing a type we didn't send — the trick behind a lot of
+  # "harmless upload becomes executable script" attacks.
+  X-Content-Type-Options: nosniff
+  # Redundant with frame-ancestors above, kept for older browsers.
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  # The site needs none of these; deny them so an injected iframe can't either.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
 # Apple refuses to validate the app-site-association file unless it is served
 # as JSON. It has no file extension, so Cloudflare would otherwise guess
 # text/plain and universal links would silently never activate.
@@ -7,3 +33,17 @@
 /.well-known/apple-app-site-association
   Content-Type: application/json
   Cache-Control: public, max-age=3600
+
+# Fonts and icons are content-stable and safe to cache hard.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# Invite URLs contain a one-time token. Keep them out of shared caches and
+# stop the token leaking through the Referer header to the App Store.
+/invite/*
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow

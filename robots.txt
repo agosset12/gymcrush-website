@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Invite URLs carry a one-time pairing token — never index them.
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+Sitemap: https://gymcrush.pages.dev/sitemap.xml
