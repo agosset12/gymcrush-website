@@ -41,7 +41,7 @@
 
         <div class="callout">
             <h3>The short version</h3>
-            <p>GymCrush is an app for two people, so parts of your data are stored in the cloud and shared with the partner you pair with — that is how one shared streak, one shared coin balance and one shared collection work. If you send a photo to your partner, we store it so they can see it. We use a small set of providers to run the app (Supabase, PostHog, RevenueCat and Apple). <strong>We do not sell your data, we do not use advertising trackers, we do not ask for the iOS tracking permission, and we do not read Apple Health.</strong></p>
+            <p>GymCrush is an app for two people, so parts of your data are stored in the cloud and shared with the partner you pair with — that is how one shared streak, one shared coin balance and one shared collection work. If you send a photo to your partner, we store it so they can see it. We use a small set of providers to run the app (Supabase, PostHog, RevenueCat, AppsFlyer and Apple). <strong>We do not sell your data, and we do not read Apple Health.</strong> We do measure which adverts bring people to GymCrush, which is why iOS asks your permission to track — you can say no, and everything in the app works exactly the same.</p>
         </div>
 
         <h2 id="who-we-are">1. Who we are</h2>
@@ -136,6 +136,14 @@
             <li><strong>Deletion.</strong> Photos are deleted when you delete your account, and you can remove moments in the app. Copies already cached on your partner's device are outside our control, in the same way any photo you send someone is.</li>
         </ul>
         <p>We do not scan, analyse, or use your photos for any purpose other than showing them to your partner. They are never used for advertising or for training machine-learning models.</p>
+
+        <h3 id="advertising">2.4 Advertising measurement</h3>
+        <p>We advertise GymCrush, and we need to know which adverts actually work — otherwise we are paying for adverts nobody responds to. To measure that we use <strong>AppsFlyer</strong>, which records that an install happened and which campaign it came from.</p>
+        <ul>
+            <li><strong>The iOS tracking prompt.</strong> Early in onboarding, iOS asks whether GymCrush may track you. This is Apple's own dialog, not ours. If you allow it, your device's advertising identifier (IDFA) is used to match your install to the advert you saw. <strong>If you decline, we simply do not receive it</strong>, measurement falls back to Apple's aggregated, anonymous SKAdNetwork reporting, and nothing about the app changes for you.</li>
+            <li><strong>What is shared.</strong> The advertising identifier (only with your permission), your account identifier, the device and app version, and the fact that certain milestones happened — that you started a trial, or that you paired with a partner. Numbers and events, nothing more.</li>
+            <li><strong>What is never shared.</strong> <strong>Your photos, your messages, your partner's identity, and anything you and your partner do together inside the app are never sent to AppsFlyer or to any advertising network.</strong></li>
+        </ul>
 
         <h3>2.4 Fitness and activity data</h3>
         <p><strong>GymCrush does not connect to Apple Health / HealthKit and does not read any health data from your device.</strong> The only "fitness" data we hold is what you tell the app yourself: which daily challenges you marked as complete, and the streak and statistics derived from that. It is self-reported activity, not measured health data.</p>
@@ -235,6 +243,11 @@
                         <td>United States</td>
                     </tr>
                     <tr>
+                        <td><strong>AppsFlyer</strong></td>
+                        <td>Advertising measurement (which campaign an install came from)</td>
+                        <td>United States</td>
+                    </tr>
+                    <tr>
                         <td><strong>Apple</strong></td>
                         <td>Payments, sign-in, push notification delivery</td>
                         <td>Global</td>
@@ -303,7 +316,7 @@
                     </tr>
                     <tr>
                         <td>Photos sent to your partner</td>
-                        <td>Until you or your partner delete them, or you delete your account</td>
+                        <td>Until you or your partner delete them, or you delete your account &mdash; and in any case no longer than <strong>12 months</strong> after they were sent</td>
                     </tr>
                     <tr>
                         <td>Push token</td>
@@ -320,6 +333,8 @@
                 </tbody>
             </table>
         </div>
+
+        <p><strong>Our commitment on your photos.</strong> Photos are stored on infrastructure we operate, so we are technically capable of opening them. We commit to only ever doing so in two situations: when someone reports a photo to us through the app and we have to review it, or when we are legally compelled to. We do not browse them, we build no tool that displays them to us, and we never use them to improve the product, to advertise, or to train machine-learning models. If you would rather this were impossible rather than promised, the honest answer is that end-to-end encryption would also make it impossible for us to act on a report about harmful content &mdash; including content involving a minor &mdash; and we have chosen to keep that ability.</p>
 
         <h2 id="children">10. Children</h2>
         <p>GymCrush is not directed at children. You must be at least <strong>13 years old</strong> to use it, and in countries that set a higher age for consenting to online services without a parent — for example <strong>15 in France</strong>, and 16 in several other EU countries — you must be at least that age, or have your parent or guardian's consent.</p>
