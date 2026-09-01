@@ -5,4 +5,4 @@ Allow: /
 Disallow: /invite/
 Disallow: /invite-landing.html
 
-Sitemap: https://gymcrush.pages.dev/sitemap.xml
+Sitemap: https://getgymcrush.com/sitemap.xml
