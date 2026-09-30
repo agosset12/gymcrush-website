@@ -37,7 +37,7 @@
 
     <main class="content" id="main">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: September 23, 2026 &middot; Applies to the GymCrush iOS app and this website</p>
+        <p class="last-updated">Last updated: October 1, 2026 &middot; Applies to the GymCrush iOS app and this website</p>
 
         <div class="callout">
             <h3>The short version</h3>
@@ -93,8 +93,13 @@
                         <td>No</td>
                     </tr>
                     <tr>
-                        <td>Product analytics events</td>
+                        <td>Product analytics events and masked session replays</td>
                         <td>Understanding and improving the app</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Advertising measurement (install, trial, purchase and pairing events — with the advertising identifier only if you allow tracking)</td>
+                        <td>Knowing which of our adverts work</td>
                         <td>No</td>
                     </tr>
                     <tr>
@@ -140,34 +145,35 @@
         <h3 id="advertising">2.4 Advertising measurement</h3>
         <p>We advertise GymCrush, and we need to know which adverts actually work — otherwise we are paying for adverts nobody responds to. To measure that we use <strong>AppsFlyer</strong>, which records that an install happened and which campaign it came from.</p>
         <ul>
-            <li><strong>The iOS tracking prompt.</strong> Early in onboarding, iOS asks whether GymCrush may track you. This is Apple's own dialog, not ours. If you allow it, your device's advertising identifier (IDFA) is used to match your install to the advert you saw. <strong>If you decline, we simply do not receive it</strong>, measurement falls back to Apple's aggregated, anonymous SKAdNetwork reporting, and nothing about the app changes for you.</li>
-            <li><strong>What is shared.</strong> The advertising identifier (only with your permission), your account identifier, the device and app version, and the fact that certain milestones happened — that you started a trial, or that you paired with a partner. Numbers and events, nothing more.</li>
-            <li><strong>What is never shared.</strong> <strong>Your photos, your messages, your partner's identity, and anything you and your partner do together inside the app are never sent to AppsFlyer or to any advertising network.</strong></li>
+            <li><strong>The iOS tracking prompt.</strong> Early in onboarding, iOS asks whether GymCrush may track you. This is Apple's own dialog, not ours. If you allow it, your device's advertising identifier (IDFA) is used to match your install to the advert you saw. <strong>If you decline, we never receive your advertising identifier.</strong> AppsFlyer still receives the app-specific vendor identifier, your account identifier and the milestones listed below, so we can count installs, trials and purchases, but not the identifier that links you across other companies' apps. Which campaign your install came from is then reported only through Apple's aggregated SKAdNetwork measurement. Nothing about the app changes for you.</li>
+            <li><strong>What is shared.</strong> The advertising identifier (only if you allow tracking), the app-specific vendor identifier, your account identifier, your IP address, the device model, iOS and app version, and the fact that certain milestones happened — that you installed the app, started a trial, bought or renewed a subscription (reported by RevenueCat), or paired with a partner. AppsFlyer passes those milestone events to the advertising network that ran the campaign you came from (for example TikTok or Meta) so it can count which adverts led to them. Numbers and events, nothing more.</li>
+            <li><strong>What is never shared.</strong> <strong>Your photos, your email address, your display name, your partner's identity, your questionnaire answers and what you actually do in the app day to day are never sent to AppsFlyer or to any advertising network.</strong> The only couple-related fact that leaves is that a pairing happened.</li>
         </ul>
 
-        <h3>2.4 Fitness and activity data</h3>
+        <h3>2.5 Fitness and activity data</h3>
         <p><strong>GymCrush does not connect to Apple Health / HealthKit and does not read any health data from your device.</strong> The only "fitness" data we hold is what you tell the app yourself: which daily challenges you marked as complete, and the streak and statistics derived from that. It is self-reported activity, not measured health data.</p>
 
-        <h3>2.5 Onboarding questionnaire</h3>
+        <h3>2.6 Onboarding questionnaire</h3>
         <p>During onboarding we ask a few questions about your goals and habits so the app can start you in a sensible place. Your answers are stored with your account. They are not shared with your partner and are not used for advertising.</p>
 
-        <h3>2.6 Notifications</h3>
+        <h3>2.7 Notifications</h3>
         <p>If you allow notifications, Apple issues a device token that we store so we can send the reminders you have enabled — for example when your shared streak is at risk or your partner has done something. You can turn notifications off at any time in the app or in iOS Settings, and we delete the token when you delete your account.</p>
 
-        <h3>2.7 Product analytics</h3>
+        <h3>2.8 Product analytics</h3>
         <p><strong>Provider:</strong> PostHog Inc., United States.</p>
         <p>We record usage events to understand how the app is used and to improve it: app opens, screen views, task completions, streak events, chest and reveal openings, shop and purchase events, onboarding steps, and errors.</p>
         <p>To be precise about something that is easy to overstate: <strong>these events are linked to your account identifier — they are not anonymous.</strong> We use them to understand product behaviour and to debug problems. We do not use them to build advertising profiles, we do not sell them, and we do not combine them with data from other companies' apps or websites. PostHog is used for product analytics. Advertising measurement is handled separately through AppsFlyer, as described in section 2.4. GymCrush requests permission through Apple’s App Tracking Transparency prompt before accessing the advertising identifier.</p>
+        <p><strong>Session replays.</strong> For a sample of app sessions, PostHog also records a replay: a sequence of screenshots of the GymCrush screens you use and where you tap, so we can see where the app is confusing or broken. Replays are masked on your device before anything is sent: <strong>text you type and all images — including the photos you share with your partner — are blanked out</strong> and never leave your phone. Other text shown on screen, such as your or your partner's display name, can appear in a replay. Replays are only recorded inside the GymCrush app, never in other apps, and are linked to your account identifier like the events above. We use them only to fix problems and improve the app.</p>
 
-        <h3>2.8 Subscriptions and purchases</h3>
+        <h3>2.9 Subscriptions and purchases</h3>
         <p><strong>Provider:</strong> RevenueCat Inc., United States.</p>
         <p>We use RevenueCat to manage premium entitlements, including couple ("pair") premium. It processes a customer identifier, purchase and renewal events, subscription status, and entitlement changes. We store a record of purchases granted to your account so that coins and items are delivered exactly once.</p>
         <p><strong>Your payment details are handled entirely by Apple.</strong> Card numbers and billing addresses are never sent to, seen by, or stored by us or by RevenueCat.</p>
 
-        <h3>2.9 Diagnostic and technical data</h3>
+        <h3>2.10 Diagnostic and technical data</h3>
         <p>To operate the service securely, our servers process ordinary technical information such as the IP address a request comes from, timestamps, and the app version. This is used for security, abuse prevention and debugging, and is not used to build a profile of you.</p>
 
-        <h3>2.10 This website</h3>
+        <h3>2.11 This website</h3>
         <p>This website sets <strong>no cookies</strong>, runs no analytics, and embeds no third-party scripts, fonts or trackers. Fonts and images are served from this site itself. That is why you are not seeing a cookie banner — there is nothing to consent to. Our host, Cloudflare, processes standard server logs to deliver the site and protect it from attack.</p>
 
         <h2 id="how-we-use">3. How we use your data</h2>
@@ -207,6 +213,10 @@
                         <td>Consent — Art. 6(1)(a), given through the iOS permission prompts and withdrawable at any time in iOS Settings</td>
                     </tr>
                     <tr>
+                        <td>Advertising measurement (AppsFlyer)</td>
+                        <td>Consent — Art. 6(1)(a) — for the advertising identifier, given through the iOS tracking prompt and withdrawable at any time in iOS Settings → Privacy &amp; Security → Tracking. Legitimate interests — Art. 6(1)(f) — in knowing which of our adverts work, for the vendor identifier, account identifier and milestone events described in section 2.4</td>
+                    </tr>
+                    <tr>
                         <td>Keeping records required by tax or consumer law</td>
                         <td>Legal obligation — Art. 6(1)(c)</td>
                     </tr>
@@ -234,7 +244,7 @@
                     </tr>
                     <tr>
                         <td><strong>PostHog</strong></td>
-                        <td>Product analytics</td>
+                        <td>Product analytics and masked session replays</td>
                         <td>United States</td>
                     </tr>
                     <tr>
@@ -327,6 +337,10 @@
                         <td>Per PostHog's retention policy; identifier reset on account deletion</td>
                     </tr>
                     <tr>
+                        <td>Session replays</td>
+                        <td>Per PostHog's retention policy; identifier reset on account deletion</td>
+                    </tr>
+                    <tr>
                         <td>Purchase and subscription records</td>
                         <td>For the subscription relationship, then as long as tax and accounting law requires</td>
                     </tr>
@@ -342,7 +356,7 @@
 
         <h2 id="california">11. California and other US state privacy rights</h2>
         <p>If you are a resident of California, Colorado, Connecticut, Virginia or another US state with a comprehensive privacy law, you have the right to know what personal information we collect and why, to request a copy of it, to correct it, and to request its deletion. You may also appeal a refusal.</p>
-        <p><strong>We do not sell your personal information, and we do not share it for cross-context behavioural advertising</strong> — including with respect to anyone under 16. We therefore offer no "Do Not Sell or Share" mechanism, because there is nothing to opt out of. We do not discriminate against anyone for exercising these rights. To make a request, email <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off-->.</p>
+        <p><strong>We do not sell your personal information.</strong> The only personal data that reaches advertising networks is the campaign measurement described in section 2.4 — install, trial, purchase and pairing events — and it reaches those networks linked to you individually only if you allow tracking in the iOS prompt. You can withdraw that permission at any time in iOS Settings → Privacy &amp; Security → Tracking. We do not discriminate against anyone for exercising these rights. To make a request, email <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off-->.</p>
 
         <h2 id="changes">12. Changes to this policy</h2>
         <p>We may update this policy as the app changes. We will post the new version here and update the "Last updated" date. If a change materially affects how we use your data, we will tell you in the app before it takes effect, and where the law requires it we will ask for your consent.</p>
