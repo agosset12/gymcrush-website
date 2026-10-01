@@ -3,460 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GymCrush — Two hearts. One streak.</title>
-    <meta name="description" content="The gamified fitness app for couples. Complete daily tasks together, keep one shared streak, and unlock collectible companions as a pair.">
+    <title>GymCrush — Get fit with your person</title>
+    <meta name="description" content="The fitness app for couples. Three little challenges a day, one shared streak, and a crew of gym buddies to collect together.">
     <link rel="canonical" href="https://getgymcrush.com/">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#FFF8EF">
 
+    <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="GymCrush">
-    <meta property="og:title" content="GymCrush — Two hearts. One streak.">
-    <meta property="og:description" content="The gamified fitness app for couples. Train together, keep one shared streak, and unlock collectible companions.">
+    <meta property="og:title" content="GymCrush — Get fit with your person">
+    <meta property="og:description" content="The fitness app for couples. Three little challenges a day, one shared streak.">
     <meta property="og:url" content="https://getgymcrush.com/">
     <meta property="og:image" content="https://getgymcrush.com/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="GymCrush — two hearts, one streak. The gamified fitness app for couples.">
+    <meta property="og:image:alt" content="GymCrush — get fit with your person. The fitness app for couples.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GymCrush — Two hearts. One streak.">
-    <meta name="twitter:description" content="The gamified fitness app for couples.">
+    <meta name="twitter:title" content="GymCrush — Get fit with your person">
+    <meta name="twitter:description" content="The fitness app for couples.">
     <meta name="twitter:image" content="https://getgymcrush.com/assets/og-image.png">
 
     <!-- ═══ LAUNCH DAY ═══════════════════════════════════════════════════
          When the App Store listing goes public, do these two things:
            1. Uncomment the smart-banner meta tag below.
-           2. In the hero, swap the .store-badge <div> for the <a> kept in
-              the comment beside it.
+           2. Swap BOTH .store-badge <span>s (hero + closing) for an
+              <a class="store-badge" href="https://apps.apple.com/app/id6766544775">
+              with the same children, and change "Coming soon to the" to
+              "Download on the".
          Both are inert right now because the listing 404s until release.
          <meta name="apple-itunes-app" content="app-id=6766544775">
          ═════════════════════════════════════════════════════════════════ -->
 
+    <link rel="preload" href="fonts/nunito-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Landing-page-only styles. Everything shared lives in styles.css. */
+        /* Landing-page-only styles. Everything shared lives in styles.css.
+           The page borrows the App Store set's system: cream ground, navy ink,
+           ONE coral pill on the words that matter, soft navy-tinted lift. */
 
-        body {
-            background:
-                radial-gradient(120% 80% at 50% -10%, #FFECEE 0%, rgba(255, 236, 238, 0) 55%),
-                var(--bg);
-        }
-
-        .hero {
+        .wrap {
             max-width: 1080px;
             margin: 0 auto;
-            padding: 56px 24px 40px;
-            display: flex;
-            flex-direction: column;
+            padding: 0 24px;
+        }
+
+        /* ── Hero ── */
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr auto;
             align-items: center;
-            text-align: center;
+            gap: 64px;
+            padding-top: 40px;
+            padding-bottom: 96px;
         }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .app-icon {
-            width: 84px;
-            height: 84px;
-            border-radius: 23px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-md);
-            flex-shrink: 0;
-        }
-
-        .app-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .app-name {
-            font-size: 32px;
-            font-weight: 900;
-            letter-spacing: -0.6px;
-        }
-
-        .tagline {
-            margin-top: 26px;
-        }
-
-        .tagline-line {
-            font-size: 52px;
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -1.6px;
-            display: block;
-        }
-
-        .tagline-line.accent {
-            color: var(--primary);
-        }
-
-        .subtagline {
-            margin-top: 16px;
-            font-size: 17px;
+        .eyebrow {
+            font-size: 15px;
+            font-weight: 500;
             color: var(--text-muted);
-            max-width: 440px;
-            line-height: 1.6;
+            margin-bottom: 14px;
         }
 
-        .store-badge {
-            margin-top: 30px;
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
+        .hero h1 {
+            font-family: var(--display);
+            font-weight: 900;
+            font-size: 64px;
+            line-height: 1.04;
+            letter-spacing: -1.6px;
+            color: var(--text);
+        }
+
+        .hero h1 .pill {
+            margin-top: 6px;
+        }
+
+        .hero .lede {
+            margin-top: 22px;
+            max-width: 430px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-body);
+        }
+
+        .hero .store-badge {
+            margin-top: 32px;
+        }
+
+        /* The App Preview, framed as the phone it was recorded on. */
+        .phone {
+            position: relative;
+            width: 280px;
+            padding: 9px;
+            border-radius: 48px;
             background: var(--text);
-            color: #FFFFFF;
-            padding: 15px 26px;
-            border-radius: var(--radius);
-            font-size: 15.5px;
-            font-weight: 600;
-            box-shadow: 0 6px 18px rgba(20, 33, 58, 0.18);
-            text-decoration: none;
+            box-shadow: 0 0 0 1.5px #2A3E78 inset, var(--lift);
+        }
+
+        .phone video {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 600 / 1300;
+            border-radius: 39px;
+            background: var(--bg);
+            object-fit: cover;
+        }
+
+        .play-toggle {
+            position: absolute;
+            right: -14px;
+            bottom: 34px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+        }
+
+        .play-toggle svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .play-toggle .icon-play,
+        .play-toggle.paused .icon-pause {
+            display: none;
+        }
+
+        .play-toggle.paused .icon-play {
+            display: block;
+        }
+
+        /* ── Screenshot strip ── */
+
+        .shots {
+            padding-bottom: 88px;
+        }
+
+        .shots-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .shots-track {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            /* Line the first card up with the page column, then bleed right. */
+            scroll-padding: 0 max(24px, calc((100vw - 1032px) / 2));
+            padding: 8px max(24px, calc((100vw - 1032px) / 2)) 32px;
+            scrollbar-width: none;
+        }
+
+        .shots-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .shots-track:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: -3px;
+        }
+
+        .shots-track img {
+            flex: 0 0 auto;
+            width: 240px;
+            height: auto;
+            aspect-ratio: 660 / 1434;
+            border-radius: 26px;
+            scroll-snap-align: start;
+            box-shadow: var(--shadow-sm);
+            background: var(--surface-soft);
+        }
+
+        .shots-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .shots-nav button {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: border-color 0.2s, opacity 0.2s;
+        }
+
+        .shots-nav button:hover:not(:disabled) {
+            border-color: var(--text);
+        }
+
+        .shots-nav button:disabled {
+            opacity: 0.35;
             cursor: default;
         }
 
-        a.store-badge {
-            cursor: pointer;
-            transition: transform 0.15s;
+        .shots-nav svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        a.store-badge:hover {
-            transform: translateY(-2px);
-        }
+        /* ── Sections ── */
 
-        .store-badge .apple {
-            font-size: 19px;
-            line-height: 1;
-        }
-
-        .store-badge .muted {
-            color: #B9C0CC;
-            font-weight: 500;
-        }
-
-        /* ── Screenshot carousel ── */
-
-        .phone-section {
-            margin-top: 44px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .carousel-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 0;
-        }
-
-        .carousel-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            color: var(--primary);
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
-            flex-shrink: 0;
-        }
-
-        .carousel-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary-dark);
-            box-shadow: 0 4px 12px rgba(246, 111, 125, 0.18);
-        }
-
-        .screenshot-carousel {
-            width: min(248px, calc(100vw - 120px));
-            position: relative;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            border-radius: 38px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg), var(--shadow-sm);
-        }
-
-        .screenshot-carousel-inner {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: calc(100% * 2796 / 1290);
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .screenshot-track {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .screenshot-slide {
-            flex: 0 0 100%;
-            position: relative;
-        }
-
-        .screenshot-slide img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            object-position: center top;
-        }
-
-        .carousel-dots {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .carousel-dot {
-            width: 9px;
-            height: 9px;
-            padding: 0;
-            border: none;
-            border-radius: 50%;
-            background: var(--border);
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .carousel-dot.active {
-            background: var(--primary);
-            transform: scale(1.25);
-        }
-
-        /* ── Content sections ── */
-
-        section.band {
-            padding: 68px 24px;
-        }
-
-        section.band.soft {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .band-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .band h2 {
-            font-size: 32px;
+        .section-title {
+            font-family: var(--display);
             font-weight: 900;
+            font-size: 38px;
+            line-height: 1.1;
             letter-spacing: -0.8px;
-            text-align: center;
-            margin-bottom: 10px;
+            color: var(--text);
         }
 
-        .band .band-lede {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 16.5px;
-            max-width: 520px;
-            margin: 0 auto 44px;
+        .steps-section {
+            padding-bottom: 104px;
         }
 
         .steps {
+            margin-top: 36px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            list-style: none;
         }
 
-        .step {
-            text-align: center;
-            padding: 8px;
+        .steps li {
+            border-top: 1px solid var(--border);
+            padding-top: 22px;
         }
 
         .step-num {
-            width: 46px;
-            height: 46px;
-            margin: 0 auto 14px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #FFF;
-            font-weight: 700;
+            font-family: var(--display);
+            font-weight: 900;
+            font-size: 15px;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .steps h3 {
             font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 14px rgba(246, 111, 125, 0.32);
-        }
-
-        .step h3 {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .step p {
-            color: var(--text-body);
-            font-size: 15px;
-            line-height: 1.65;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-        }
-
-        .feature {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 26px 24px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        section.band.soft .feature {
-            background: var(--bg);
-        }
-
-        .feature-emoji {
-            font-size: 28px;
-            line-height: 1;
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .feature h3 {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 7px;
-        }
-
-        .feature p {
-            color: var(--text-body);
-            font-size: 15px;
-            line-height: 1.65;
-        }
-
-        /* ── Trust strip ── */
-
-        .trust {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 8px;
-        }
-
-        .trust-item {
-            text-align: center;
-        }
-
-        .trust-item .mark {
-            font-size: 22px;
-            display: block;
+            font-weight: 600;
+            line-height: 1.35;
             margin-bottom: 8px;
         }
 
-        .trust-item h3 {
+        .steps p {
             font-size: 15.5px;
-            font-weight: 700;
-            margin-bottom: 5px;
+            line-height: 1.65;
+            color: var(--text-body);
         }
 
-        .trust-item p {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
+        .privacy-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 44px;
+            display: grid;
+            grid-template-columns: 0.9fr 2fr;
+            gap: 48px;
         }
 
-        .band-cta {
-            text-align: center;
-            margin-top: 40px;
+        .privacy-card .section-title {
+            font-size: 30px;
         }
 
-        .band-cta a {
-            color: var(--primary-dark);
-            font-weight: 600;
+        .privacy-card .more {
+            display: inline-block;
+            margin-top: 16px;
             font-size: 15px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            text-decoration: none;
         }
 
-        @media (max-width: 700px) {
+        .privacy-card .more:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .privacy-points {
+            list-style: none;
+            display: grid;
+            gap: 22px;
+        }
+
+        .privacy-points h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .privacy-points p {
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--text-body);
+        }
+
+        .closing {
+            padding-top: 112px;
+            padding-bottom: 104px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .closing .app-icon {
+            width: 88px;
+            height: 88px;
+            border-radius: 22.5%;
+            box-shadow: var(--lift);
+            margin-bottom: 28px;
+        }
+
+        .closing .section-title {
+            font-size: 48px;
+        }
+
+        .closing .store-badge {
+            margin-top: 32px;
+        }
+
+        @media (max-width: 900px) {
             .hero {
-                padding: 34px 18px 26px;
+                grid-template-columns: 1fr;
+                justify-items: center;
+                text-align: center;
+                gap: 48px;
+                padding-top: 32px;
+                padding-bottom: 72px;
             }
 
-            .app-icon {
-                width: 62px;
-                height: 62px;
-                border-radius: 17px;
+            .hero .lede {
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .app-name {
-                font-size: 25px;
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 28px;
             }
 
-            .tagline {
-                margin-top: 18px;
+            .privacy-card {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 32px 26px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrap {
+                padding-left: 18px;
+                padding-right: 18px;
             }
 
-            .tagline-line {
-                font-size: 34px;
+            .hero h1 {
+                font-size: 44px;
                 letter-spacing: -1px;
             }
 
-            .subtagline {
-                font-size: 15px;
-                margin-top: 12px;
+            .hero .lede {
+                font-size: 16.5px;
             }
 
-            .store-badge {
-                margin-top: 22px;
+            .phone {
+                width: 260px;
+                border-radius: 44px;
+                padding: 8px;
             }
 
-            .phone-section {
-                margin-top: 30px;
-                gap: 8px;
+            .phone video {
+                border-radius: 36px;
             }
 
-            .screenshot-carousel {
-                width: min(calc(100vw - 76px), 280px);
+            .play-toggle {
+                right: -10px;
             }
 
-            .carousel-btn {
-                width: 34px;
-                height: 34px;
-                font-size: 16px;
+            .shots-track {
+                gap: 14px;
+                padding-left: 18px;
+                padding-right: 18px;
+                scroll-padding: 0 18px;
             }
 
-            section.band {
-                padding: 46px 18px;
+            .shots-track img {
+                width: 200px;
+                border-radius: 22px;
             }
 
-            .band h2 {
-                font-size: 25px;
+            .shots-nav {
+                display: none;
             }
 
-            .band .band-lede {
-                font-size: 15px;
-                margin-bottom: 32px;
+            .section-title {
+                font-size: 30px;
+            }
+
+            .shots {
+                padding-bottom: 64px;
+            }
+
+            .steps-section {
+                padding-bottom: 72px;
+            }
+
+            .closing {
+                padding-top: 80px;
+                padding-bottom: 72px;
+            }
+
+            .closing .section-title {
+                font-size: 36px;
             }
         }
     </style>
@@ -464,144 +448,116 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <header>
+        <a href="./" class="brand-link" aria-label="GymCrush home">
+            <img src="assets/icon.webp" alt="" width="34" height="34">
+            <span>GymCrush</span>
+        </a>
+        <nav aria-label="Main">
+            <ul class="nav-links">
+                <li><a href="support.html">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main id="main">
-        <div class="hero">
-            <div class="brand">
-                <div class="app-icon">
-                    <img src="icon.png" alt="GymCrush app icon" width="512" height="512">
-                </div>
-                <div class="app-name">GymCrush</div>
+        <section class="wrap hero">
+            <div>
+                <p class="eyebrow">The fitness app for couples</p>
+                <h1>Get fit with<br><span class="pill">your person</span></h1>
+                <p class="lede">Three little challenges a day, one streak you keep together, and a crew of gym buddies cheering you both on.</p>
+
+                <!-- LAUNCH DAY: becomes an <a> — see the note in <head>. -->
+                <span class="store-badge" role="img" aria-label="Coming soon to the App Store">
+                    <svg class="apple" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                    <span class="badge-text"><small>Coming soon to the</small>App Store</span>
+                </span>
             </div>
 
-            <h1 class="tagline">
-                <span class="tagline-line">Two hearts.</span>
-                <span class="tagline-line accent">One streak.</span>
-            </h1>
-
-            <p class="subtagline">The gamified fitness app for couples. Train together, keep one shared streak, and unlock collectible companions as you go.</p>
-
-            <!-- LAUNCH DAY: replace this <div> with the <a> below it.
-                 <a class="store-badge" href="https://apps.apple.com/app/id6766544775">
-                     <span class="apple" aria-hidden="true">&#63743;</span>
-                     <span>Download <span class="muted">on the App Store</span></span>
-                 </a> -->
-            <div class="store-badge" role="text" aria-label="Coming soon to the App Store">
-                <span class="apple" aria-hidden="true">&#63743;</span>
-                <span>Coming soon <span class="muted">to the App Store</span></span>
-            </div>
-
-            <div class="phone-section">
-                <button class="carousel-btn" id="prevBtn" type="button" aria-label="Previous screenshot">&#8249;</button>
-                <div class="carousel-column">
-                    <div class="screenshot-carousel">
-                        <div class="screenshot-carousel-inner">
-                            <div class="screenshot-track" id="screenshotTrack">
-                                <div class="screenshot-slide"><img src="screenshots/01.png" alt="GymCrush home screen with both partners' companions" width="1290" height="2796"></div>
-                                <div class="screenshot-slide"><img src="screenshots/02.png" alt="Daily tasks and the shared streak" width="1290" height="2796" loading="lazy"></div>
-                                <div class="screenshot-slide"><img src="screenshots/03.png" alt="Opening a reward chest" width="1290" height="2796" loading="lazy"></div>
-                                <div class="screenshot-slide"><img src="screenshots/04.png" alt="The companion collection" width="1290" height="2796" loading="lazy"></div>
-                                <div class="screenshot-slide"><img src="screenshots/05.png" alt="Progress and streak statistics" width="1290" height="2796" loading="lazy"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose screenshot">
-                        <button class="carousel-dot active" type="button" role="tab" aria-label="Screenshot 1" aria-selected="true"></button>
-                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 2" aria-selected="false"></button>
-                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 3" aria-selected="false"></button>
-                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 4" aria-selected="false"></button>
-                        <button class="carousel-dot" type="button" role="tab" aria-label="Screenshot 5" aria-selected="false"></button>
-                    </div>
-                </div>
-                <button class="carousel-btn" id="nextBtn" type="button" aria-label="Next screenshot">&#8250;</button>
-            </div>
-        </div>
-
-        <section class="band soft">
-            <div class="band-inner">
-                <h2>How it works</h2>
-                <p class="band-lede">Three steps, then it is just the two of you showing up every day.</p>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-num" aria-hidden="true">1</div>
-                        <h3>Pair with your partner</h3>
-                        <p>Send them an invite link or a 6-character code. One tap and your two accounts are linked.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-num" aria-hidden="true">2</div>
-                        <h3>Finish your daily tasks</h3>
-                        <p>Pick challenges that fit your day. Your progress and theirs both count toward the same goal.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-num" aria-hidden="true">3</div>
-                        <h3>Keep the streak alive</h3>
-                        <p>Hit the goal together and your shared streak ticks up. Miss it and you both feel it.</p>
-                    </div>
-                </div>
+            <div class="phone">
+                <video id="preview" src="media/preview.mp4" poster="media/preview-poster.webp" width="600" height="1300"
+                       autoplay muted loop playsinline preload="metadata"
+                       aria-label="A short tour of GymCrush: the home screen, daily challenges, the shop, a mascot hatching and a moment sent to your partner"></video>
+                <button class="play-toggle" id="previewToggle" type="button" aria-label="Pause video">
+                    <svg class="icon-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.6" height="12" rx="1.2"/><rect x="8.4" y="1" width="3.6" height="12" rx="1.2"/></svg>
+                    <svg class="icon-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.8v10.4c0 .8.9 1.3 1.6.8l8-5.2c.6-.4.6-1.2 0-1.6l-8-5.2C3.9.5 3 1 3 1.8z"/></svg>
+                </button>
             </div>
         </section>
 
-        <section class="band">
-            <div class="band-inner">
-                <h2>Built for two</h2>
-                <p class="band-lede">Every mechanic in GymCrush assumes there are two of you. That is the whole point.</p>
-                <div class="features">
-                    <div class="feature">
-                        <span class="feature-emoji" aria-hidden="true">🔥</span>
-                        <h3>One shared streak</h3>
-                        <p>Not one streak each — one between you. It survives only if you both show up, which is exactly the pressure that works.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-emoji" aria-hidden="true">🤝</span>
-                        <h3>Team Assist</h3>
-                        <p>Both daily goals merge into a single bar. When one of you has a brutal day, the other can carry it.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-emoji" aria-hidden="true">🛡️</span>
-                        <h3>Streak Freeze</h3>
-                        <p>Life happens. Arm a freeze before a day you know is lost and your streak survives it intact.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-emoji" aria-hidden="true">🥚</span>
-                        <h3>Collectible companions</h3>
-                        <p>Earn coins together and hatch them into a shared collection of characters. Equip your favourite; they will see it.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-emoji" aria-hidden="true">📸</span>
-                        <h3>Moments &amp; widget</h3>
-                        <p>Send a photo straight to your partner's home screen. Private to the two of you, and entirely optional.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-emoji" aria-hidden="true">💞</span>
-                        <h3>One subscription, both of you</h3>
-                        <p>Premium is priced per couple, not per person. If one of you subscribes, you both get it.</p>
-                    </div>
+        <section class="shots" aria-labelledby="shots-title">
+            <div class="wrap shots-head">
+                <h2 class="section-title" id="shots-title">A little peek inside</h2>
+                <div class="shots-nav">
+                    <button type="button" id="shotsPrev" aria-label="Previous screenshots"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+                    <button type="button" id="shotsNext" aria-label="Next screenshots"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
                 </div>
+            </div>
+            <div class="shots-track" id="shotsTrack" tabindex="0" role="region" aria-label="App screenshots, scroll sideways">
+                <img src="screenshots/01.webp" width="660" height="1434" alt="Get fit with your person: both partners' mascots on the home screen above today's three challenges">
+                <img src="screenshots/02.webp" width="660" height="1434" alt="3 little challenges a day, picked from a wall of workouts and habits">
+                <img src="screenshots/03.webp" width="660" height="1434" alt="Grow your shared streak and earn rewards: a 37-day streak">
+                <img src="screenshots/04.webp" width="660" height="1434" alt="Make a bet, loser pays: a 10-minute massage on the line" loading="lazy">
+                <img src="screenshots/05.webp" width="660" height="1434" alt="Share your wins: a workout selfie arriving on your partner's lock screen" loading="lazy">
+                <img src="screenshots/06.webp" width="660" height="1434" alt="No motivation? Power up with Team Assist, Streak Freeze and Dare Drop" loading="lazy">
+                <img src="screenshots/07.webp" width="660" height="1434" alt="Build habits and grow your collection of mascots and themes" loading="lazy">
+                <img src="screenshots/08.webp" width="660" height="1434" alt="Your partner on your home screen, through the GymCrush widget" loading="lazy">
             </div>
         </section>
 
-        <section class="band soft">
-            <div class="band-inner">
-                <h2>Where we stand on your data</h2>
-                <p class="band-lede">A couples app holds intimate things. Here is our position, in plain terms.</p>
-                <div class="trust">
-                    <div class="trust-item">
-                        <span class="mark" aria-hidden="true">🚫</span>
+        <section class="wrap steps-section" aria-labelledby="how-title">
+            <h2 class="section-title" id="how-title">How it works</h2>
+            <ol class="steps">
+                <li>
+                    <span class="step-num" aria-hidden="true">01</span>
+                    <h3>Pair up</h3>
+                    <p>Send your partner an invite link or a 6-character code. One tap and you're linked.</p>
+                </li>
+                <li>
+                    <span class="step-num" aria-hidden="true">02</span>
+                    <h3>Do your three</h3>
+                    <p>Pick challenges that fit your day. Your progress and theirs count toward the same goal.</p>
+                </li>
+                <li>
+                    <span class="step-num" aria-hidden="true">03</span>
+                    <h3>Keep the streak alive</h3>
+                    <p>Hit the goal together and your streak grows. On a rough day, the other one can carry it.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="wrap" aria-labelledby="privacy-title">
+            <div class="privacy-card">
+                <div>
+                    <h2 class="section-title" id="privacy-title">Private by design</h2>
+                    <a class="more" href="privacy.html">Read the privacy policy →</a>
+                </div>
+                <ul class="privacy-points">
+                    <li>
                         <h3>No ads in the app</h3>
                         <p>GymCrush never shows adverts and never sells your data. We do measure which of our own adverts bring people in — iOS asks your permission first, and saying no changes nothing in the app.</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="mark" aria-hidden="true">🔒</span>
-                        <h3>Your photos stay yours</h3>
+                    </li>
+                    <li>
+                        <h3>Your photos stay between you two</h3>
                         <p>Moments are readable only by you and your partner, enforced on the server. We never scan them or train models on them.</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="mark" aria-hidden="true">🍏</span>
+                    </li>
+                    <li>
                         <h3>No Apple Health access</h3>
                         <p>We never connect to Apple Health. The only activity data we hold is what you tell the app yourself.</p>
-                    </div>
-                </div>
-                <p class="band-cta"><a href="privacy.html">Read the full privacy policy →</a></p>
+                    </li>
+                </ul>
             </div>
+        </section>
+
+        <section class="wrap closing" aria-labelledby="closing-title">
+            <img class="app-icon" src="assets/icon.webp" alt="" width="256" height="256" loading="lazy">
+            <h2 class="section-title" id="closing-title">Two hearts.<br><span class="pill">One streak.</span></h2>
+            <!-- LAUNCH DAY: becomes an <a> — see the note in <head>. -->
+            <span class="store-badge" role="img" aria-label="Coming soon to the App Store">
+                <svg class="apple" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span class="badge-text"><small>Coming soon to the</small>App Store</span>
+            </span>
         </section>
     </main>
 

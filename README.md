@@ -12,14 +12,14 @@ Pages at **https://gymcrush.pages.dev**.
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Landing page — hero, screenshot carousel, how-it-works, features, data stance |
+| `index.html` | Landing page — hero with the App Preview, screenshot strip, how-it-works, privacy stance |
 | `privacy.html` | Privacy policy — **linked from inside the app**, must never 404 |
 | `terms.html` | Terms of Use / EULA — **linked from inside the app**, must never 404 |
 | `support.html` | FAQ, troubleshooting, contact — used as the App Store support URL |
 | `invite-landing.html` | Fallback page for `/invite/<token>` when the app isn't installed |
 
 `styles.css` holds everything shared; each page adds only its own layout on top.
-`carousel.js` is external rather than inline so the CSP can forbid inline scripts.
+`carousel.js` (screenshot-strip arrows + video pause button) is external rather than inline so the CSP can forbid inline scripts.
 
 ## Why the app depends on this site
 
@@ -50,12 +50,24 @@ Three config files do real work, and two of them fail *silently* when wrong:
 
 ## Assets
 
-- `icon.png` — the real app icon, 512px, copied from
-  `SoftQuestArcade/Assets.xcassets/AppIcon.appiconset/`. **Re-copy it whenever
-  the app icon changes**, or the site and the App Store listing disagree.
-- `assets/` — favicons, apple-touch-icon, and `og-image.png` (the 1200×630 card
-  used by iMessage, TikTok, X and friends)
-- `fonts/` — Rubik, subset to latin and self-hosted as woff2
+- `icon.png` — the real app icon, 512px, from
+  `ios/GymCrush/Assets.xcassets/AppIcon.appiconset/gymcrush-app-icon.png` in the app
+  repo. **Regenerate every icon below whenever the app icon changes**, or the site
+  and the App Store listing disagree: `assets/icon.webp` (256px, what the pages
+  show), `favicon.ico` (16/32/48), `assets/favicon-16/32.png` (corners rounded,
+  transparent), `assets/apple-touch-icon.png`
+  (180px, square — iOS rounds it).
+- `assets/og-image.png` — the 1200×630 share card used by iMessage, TikTok, X and
+  friends, built in the App Store set's style (Nunito Black, coral pill, two frames).
+- `fonts/` — Rubik (body) and Nunito 800/900 (display, stands in for SF Pro
+  Rounded off Apple devices), subset to latin and self-hosted as woff2
+
+### Design system
+
+The site copies the App Store screenshot set (`appstore/` in the app repo): cream
+`#FFF8EF` ground, navy `#102354` ink, a single coral `#F66F7D` `.pill` on the words
+that matter, rounded display type, soft navy-tinted shadows. No emoji, no gradients,
+no feature-card grids — the screenshots carry the product.
 
 ### Fonts are self-hosted on purpose
 
@@ -70,10 +82,10 @@ from the TTFs in the app repo at `SoftQuestArcade/Resources/Fonts/`.
 
 ### Screenshots
 
-`screenshots/01.png … 05.png` are **placeholders**. Drop in real captures at
-App Store 6.7" size (1290×2796, portrait) using the same filenames, and update
-the `alt` text in `index.html` to describe what each one actually shows. Or
-regenerate branded placeholders with `python3 make_placeholder_screens.py`.
+`screenshots/01.webp … 08.webp` are the final App Store set (`~/Desktop/GC_screenshots`),
+resized to 660px wide (`cwebp -q 84 -resize 660 0`). `media/preview.mp4` is the App
+Preview re-encoded silent at 600px wide (H.264, CRF 25, faststart, ~3 MB);
+`media/preview-poster.webp` is its 1-second frame. Keep new media lossy and small.
 
 ## Going live
 

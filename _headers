@@ -41,6 +41,12 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
+/screenshots/*
+  Cache-Control: public, max-age=604800
+
+/media/*
+  Cache-Control: public, max-age=604800
+
 # Invite URLs contain a one-time token. Keep them out of shared caches and
 # stop the token leaking through the Referer header to the App Store.
 #

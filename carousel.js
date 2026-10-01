@@ -1,47 +1,59 @@
-/* Screenshot carousel for the landing page.
+/* Landing-page behaviour: the screenshot strip's arrows and the App Preview's
+   pause button.
    Deliberately an external file rather than an inline <script>: it lets the
    Content-Security-Policy in _headers use `script-src 'self'` with no
    'unsafe-inline' escape hatch, which is what actually stops an injected
    script from running. */
 (function () {
-    var track = document.getElementById('screenshotTrack');
-    if (!track) return;
+    // ── Screenshot strip ──
+    // The strip is a native scroll-snap row, so swipe, trackpad and arrow keys
+    // already work without script. The buttons just page it two cards at a time.
+    var track = document.getElementById('shotsTrack');
+    var prev = document.getElementById('shotsPrev');
+    var next = document.getElementById('shotsNext');
 
-    var total = track.querySelectorAll('.screenshot-slide').length;
-    var dots = Array.prototype.slice.call(document.querySelectorAll('.carousel-dot'));
-    var current = 0;
+    if (track && prev && next) {
+        var step = function () {
+            var card = track.querySelector('img');
+            var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            return card ? (card.getBoundingClientRect().width + gap) * 2 : track.clientWidth;
+        };
 
-    function goTo(index) {
-        current = (index % total + total) % total;
-        track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dots.forEach(function (dot, i) {
-            var active = i === current;
-            dot.classList.toggle('active', active);
-            dot.setAttribute('aria-selected', active ? 'true' : 'false');
-        });
+        var sync = function () {
+            prev.disabled = track.scrollLeft <= 2;
+            next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+        };
+
+        prev.addEventListener('click', function () { track.scrollBy({ left: -step() }); });
+        next.addEventListener('click', function () { track.scrollBy({ left: step() }); });
+        track.addEventListener('scroll', sync, { passive: true });
+        window.addEventListener('resize', sync);
+        sync();
     }
 
-    document.getElementById('prevBtn').addEventListener('click', function () { goTo(current - 1); });
-    document.getElementById('nextBtn').addEventListener('click', function () { goTo(current + 1); });
-    dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () { goTo(i); });
-    });
+    // ── App Preview ──
+    // Muted autoplay loop, with a visible pause control (anything that moves for
+    // more than five seconds needs one). Visitors who ask the OS for reduced
+    // motion get the poster frame and can start it themselves.
+    var video = document.getElementById('preview');
+    var toggle = document.getElementById('previewToggle');
 
-    // Arrow keys move the carousel when focus is anywhere inside it.
-    document.querySelector('.phone-section').addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') { goTo(current - 1); }
-        if (e.key === 'ArrowRight') { goTo(current + 1); }
-    });
+    if (video && toggle) {
+        var render = function () {
+            toggle.classList.toggle('paused', video.paused);
+            toggle.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+        };
 
-    var startX = null;
-    var frame = document.querySelector('.screenshot-carousel');
-    frame.addEventListener('touchstart', function (e) {
-        startX = e.touches[0].clientX;
-    }, { passive: true });
-    frame.addEventListener('touchend', function (e) {
-        if (startX === null) return;
-        var diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) { goTo(current + (diff > 0 ? 1 : -1)); }
-        startX = null;
-    }, { passive: true });
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            video.removeAttribute('autoplay');
+            video.pause();
+        }
+
+        toggle.addEventListener('click', function () {
+            if (video.paused) { video.play(); } else { video.pause(); }
+        });
+        video.addEventListener('play', render);
+        video.addEventListener('pause', render);
+        render();
+    }
 })();

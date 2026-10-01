@@ -11,6 +11,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="referrer" content="no-referrer">
 
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -24,9 +25,6 @@
     <link rel="stylesheet" href="/styles.css">
     <style>
         body {
-            background:
-                radial-gradient(120% 80% at 50% -10%, #FFECEE 0%, rgba(255, 236, 238, 0) 55%),
-                var(--bg);
             min-height: 100vh;
         }
 
@@ -43,12 +41,13 @@
         .app-icon {
             width: 96px;
             height: 96px;
-            border-radius: 22px;
-            box-shadow: 0 12px 30px rgba(246, 111, 125, 0.22);
+            border-radius: 22.5%;
+            box-shadow: var(--lift);
         }
 
         h1 {
-            font-size: clamp(28px, 7vw, 40px);
+            font-family: var(--display);
+            font-size: clamp(32px, 8vw, 44px);
             font-weight: 900;
             letter-spacing: -0.02em;
             margin-top: 26px;
@@ -73,7 +72,7 @@
             font-size: 17px;
             padding: 16px 38px;
             border-radius: 18px;
-            box-shadow: 0 8px 22px rgba(246, 111, 125, 0.34);
+            box-shadow: var(--shadow-md);
             transition: transform 0.15s, background 0.2s;
         }
 
@@ -136,9 +135,9 @@
 </head>
 <body>
     <main>
-        <img src="/icon.png" alt="GymCrush" class="app-icon" width="512" height="512">
+        <img src="/assets/icon.webp" alt="GymCrush" class="app-icon" width="256" height="256">
 
-        <h1>Your partner<br>invited you</h1>
+        <h1>Your partner<br><span class="pill">invited you</span></h1>
         <p class="lede">One shared streak. You both show up, or neither of you does.</p>
 
         <!-- Final App Store ID. Resolves once the listing goes public. -->
