@@ -97,6 +97,28 @@ The App Store ID is **6766544775**. When the listing goes public, in `index.html
 Both are marked with a `LAUNCH DAY` comment block. Nothing else needs to change —
 `invite-landing.html` already links to the real listing.
 
+## Campaign links (install attribution, no tracking)
+
+The site runs no analytics. Instead every App Store link carries Apple's campaign
+tags, so installs show up per campaign in App Store Connect → Analytics →
+Acquisition → Sources (about a day's delay, only for users who share analytics
+with developers). Nothing is set or read on the visitor's device, so the privacy
+policy's "no analytics" line stays true.
+
+`pt=128381725` is the provider token (the developer account, shared with Noir);
+`ct` is the campaign name, max 40 characters.
+
+| Where | Link |
+|---|---|
+| Website badges | `https://apps.apple.com/app/apple-store/id6766544775?pt=128381725&ct=website&mt=8` |
+| Smart banner | `affiliate-data=pt=128381725&ct=website_banner` |
+| Invite landing page | `https://apps.apple.com/app/apple-store/id6766544775?pt=128381725&ct=invite&mt=8` |
+| TikTok bio | `https://apps.apple.com/app/apple-store/id6766544775?pt=128381725&ct=tiktok_bio&mt=8` |
+| Instagram bio | `https://apps.apple.com/app/apple-store/id6766544775?pt=128381725&ct=instagram_bio&mt=8` |
+| A creator | `https://apps.apple.com/app/apple-store/id6766544775?pt=128381725&ct=creator_<handle>&mt=8` |
+
+Paid ads are attributed by AppsFlyer instead, not by these links.
+
 ## Keeping the legal pages honest
 
 The privacy policy describes the app's **actual** data flows: photos uploaded to
