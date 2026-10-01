@@ -1,5 +1,5 @@
 /* Landing-page behaviour: the screenshot strip's arrows and the App Preview's
-   pause button.
+   pause button and scrubber.
    Deliberately an external file rather than an inline <script>: it lets the
    Content-Security-Policy in _headers use `script-src 'self'` with no
    'unsafe-inline' escape hatch, which is what actually stops an injected
@@ -55,5 +55,65 @@
         video.addEventListener('play', render);
         video.addEventListener('pause', render);
         render();
+    }
+
+    // ── Scrubber ──
+    // Click anywhere on the bar to jump, or drag along it. Driven by rAF while
+    // playing so the fill glides instead of ticking at timeupdate's ~4 Hz.
+    var scrub = document.getElementById('previewScrub');
+    var fill = document.getElementById('previewFill');
+
+    if (video && scrub && fill) {
+        var dragging = false;
+
+        var paint = function () {
+            var ratio = video.duration ? video.currentTime / video.duration : 0;
+            fill.style.width = (ratio * 100) + '%';
+            scrub.setAttribute('aria-valuenow', Math.round(ratio * 100));
+            scrub.setAttribute('aria-valuetext', Math.round(video.currentTime) + ' of ' + Math.round(video.duration || 0) + ' seconds');
+        };
+
+        var loop = function () {
+            paint();
+            if (!video.paused) { requestAnimationFrame(loop); }
+        };
+
+        var seekTo = function (clientX) {
+            if (!video.duration) return;
+            var box = scrub.getBoundingClientRect();
+            var ratio = Math.min(1, Math.max(0, (clientX - box.left) / box.width));
+            video.currentTime = ratio * video.duration;
+            paint();
+        };
+
+        scrub.addEventListener('pointerdown', function (e) {
+            dragging = true;
+            scrub.classList.add('dragging');
+            scrub.setPointerCapture(e.pointerId);
+            seekTo(e.clientX);
+        });
+        scrub.addEventListener('pointermove', function (e) {
+            if (dragging) { seekTo(e.clientX); }
+        });
+        var release = function () {
+            dragging = false;
+            scrub.classList.remove('dragging');
+        };
+        scrub.addEventListener('pointerup', release);
+        scrub.addEventListener('pointercancel', release);
+
+        scrub.addEventListener('keydown', function (e) {
+            if (!video.duration) return;
+            var delta = e.key === 'ArrowRight' ? 2 : e.key === 'ArrowLeft' ? -2 : 0;
+            if (!delta) return;
+            e.preventDefault();
+            video.currentTime = Math.min(video.duration, Math.max(0, video.currentTime + delta));
+            paint();
+        });
+
+        video.addEventListener('play', loop);
+        video.addEventListener('seeked', paint);
+        video.addEventListener('loadedmetadata', paint);
+        paint();
     }
 })();

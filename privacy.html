@@ -40,17 +40,102 @@
         <h1>Privacy Policy</h1>
         <p class="last-updated">Last updated: October 1, 2026 &middot; Applies to the GymCrush iOS app and this website</p>
 
-        <div class="callout">
-            <h3>The short version</h3>
-            <p>GymCrush is an app for two people, so parts of your data are stored in the cloud and shared with the partner you pair with — that is how one shared streak, one shared coin balance and one shared collection work. If you send a photo to your partner, we store it so they can see it. We use a small set of providers to run the app (Supabase, PostHog, RevenueCat, AppsFlyer and Apple). <strong>We do not sell your data, and we do not read Apple Health.</strong> We do measure which adverts bring people to GymCrush, which is why iOS asks your permission to track — you can say no, and everything in the app works exactly the same.</p>
+        <div class="summary">
+            <h2 class="summary-title">The short version</h2>
+            <ul>
+                <li><strong>Your photos are just for your partner.</strong> We don't look at them, and they're never used for ads or AI.</li>
+                <li><strong>We never sell your data</strong>, and we don't read Apple Health.</li>
+                <li><strong>Your partner sees your shared progress</strong> &mdash; streak, coins, collection &mdash; never your email or payment details.</li>
+                <li><strong>Saying no to tracking changes nothing.</strong> iOS asks so we can tell which of our adverts work.</li>
+                <li><strong>Delete everything, any time</strong>, from inside the app.</li>
+            </ul>
         </div>
 
         <h2 id="who-we-are">1. Who we are</h2>
         <p>GymCrush is built and operated by <strong>Antoine Gosset</strong>, an individual developer based in France. For the purposes of the EU General Data Protection Regulation (GDPR), Antoine Gosset is the <strong>data controller</strong> for the data described in this policy.</p>
         <p>Contact for any privacy question or request: <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off-->.</p>
 
-        <h2 id="what-we-collect">2. What we collect and why</h2>
-        <p>This table is the summary; the sections underneath give the detail.</p>
+        <h2 id="photos">2. Your photos</h2>
+        <p><strong>Moments are for your partner, not for us.</strong> We don't look at them, scan them or analyse them, and they are never used for advertising or to train AI. Session analytics blank every image on your phone before anything is sent, so your photos never show up there either.</p>
+        <p>The only times anyone at GymCrush would ever open one: if a photo is reported to us through the app and we have to review it, or if the law requires it.</p>
+        <p>GymCrush lets you take a photo in the app and send it to your partner as a "moment". This is optional — the app works without ever taking one.</p>
+        <ul>
+            <li><strong>Camera and photo library access.</strong> iOS asks your permission before the app can use your camera or save an image. You can refuse, or change your mind later in iOS Settings.</li>
+            <li><strong>Where photos go.</strong> Photos you send are uploaded to a private storage bucket hosted by Supabase in the United States, stored under your couple's identifier, and are readable only by you and your paired partner. Access is enforced by server-side storage policies, not just by the app.</li>
+            <li><strong>On your device.</strong> Recent moments are also cached on your device and in a shared app group container so the GymCrush home-screen widget can display them without re-downloading.</li>
+            <li><strong>Deletion.</strong> Photos are deleted when you delete your account, and you can remove moments in the app. Copies already cached on your partner's device are outside our control, in the same way any photo you send someone is.</li>
+        </ul>
+
+        <p class="note">Why not end-to-end encryption? It would also stop us from acting on a report of harmful content &mdash; including content involving a minor &mdash; and we've chosen to keep that ability.</p>
+        <h2 id="your-rights">3. Your rights and choices</h2>
+
+        <h3>3.1 Rights you can exercise</h3>
+        <p>Wherever you live, you can ask us to give you a copy of your data, correct it, or delete it. If you are in the EEA, UK or Switzerland you additionally have the rights to restrict processing, to data portability, and to object to processing based on legitimate interests.</p>
+        <p>To exercise any of these, email <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off-->. We respond within <strong>30 days</strong>. There is no charge, and we will not treat you differently for asking.</p>
+
+        <h3>3.2 Deleting your account</h3>
+        <p>You can delete your account at any time from inside the app: <strong>Menu → Settings → Data &amp; Privacy → Delete account</strong>. This deletes your account record, your profile, your photos, your push token and your personal game data, and resets your analytics identifier.</p>
+        <p>Your uploaded photos are removed from our storage when you delete your account. Photos uploaded by your partner belong to their account and are handled under the retention rules in <a href="#retention">Section 5</a>. Copies someone has saved outside GymCrush cannot be removed by us. We may retain limited records where the law requires it, such as purchase records kept for tax purposes.</p>
+        <p><strong>Deleting your account does not cancel your subscription.</strong> Cancel that separately in <em>iOS Settings → your name → Subscriptions</em>, or Apple will keep billing you.</p>
+
+        <h3>3.3 Unpairing</h3>
+        <p>You can unpair from a partner in the app. Unpairing stops any further sharing of new activity between the two accounts.</p>
+
+        <h3>3.4 Permissions</h3>
+        <p>Notifications, camera and photo library access are all optional and controlled by iOS. You can grant or revoke each of them at any time in <em>iOS Settings → GymCrush</em>.</p>
+
+        <h3>3.5 Complaints</h3>
+        <p>If you are in the EEA, UK or Switzerland and you think we have handled your data improperly, we would like the chance to put it right — but you also have the right to complain to your local data protection authority. Ours is the French CNIL: <a href="https://www.cnil.fr/en/contact-cnil" target="_blank" rel="noopener noreferrer">cnil.fr</a>.</p>
+
+        <h2 id="security">4. How we protect your data</h2>
+        <ul>
+            <li>All traffic between the app and our servers is encrypted in transit with HTTPS/TLS.</li>
+            <li>Database access is restricted by row-level security, so an account can only reach its own data and the data of the partner it is paired with. Photo storage is protected by equivalent server-side policies.</li>
+            <li>Coin and item transactions are processed server-side so the shared economy cannot be manipulated from a modified client.</li>
+            <li>Secrets and API keys are held outside the app's source code.</li>
+        </ul>
+        <p>No system can be guaranteed perfectly secure, and we cannot promise absolute security. If a breach ever affects your personal data and poses a risk to your rights, we will notify the competent supervisory authority within 72 hours and notify you without undue delay where the law requires it.</p>
+
+        <h2 id="retention">5. How long we keep data</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Data</th>
+                        <th scope="col">Retention</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Account, profile and game data</td>
+                        <td>While your account exists; deleted on account deletion</td>
+                    </tr>
+                    <tr>
+                        <td>Photos sent to your partner</td>
+                        <td>Your uploaded photos are removed when you delete them or delete your account. <strong>When a pair ends, remaining photos are permanently deleted after 30 days.</strong> Copies saved outside GymCrush are outside our control.</td>
+                    </tr>
+                    <tr>
+                        <td>Push token</td>
+                        <td>Until notifications are disabled or the account is deleted</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics events</td>
+                        <td>Per PostHog's retention policy; identifier reset on account deletion</td>
+                    </tr>
+                    <tr>
+                        <td>Session replays</td>
+                        <td>Per PostHog's retention policy; identifier reset on account deletion</td>
+                    </tr>
+                    <tr>
+                        <td>Purchase and subscription records</td>
+                        <td>For the subscription relationship, then as long as tax and accounting law requires</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="what-we-collect">6. What we collect and why</h2>
+        <p>Everything GymCrush stores, at a glance. The sections underneath give the detail.</p>
 
         <div class="table-wrap">
             <table>
@@ -80,7 +165,7 @@
                     </tr>
                     <tr>
                         <td>Photos you capture and send ("moments")</td>
-                        <td>Showing them to your partner in the app and widget</td>
+                        <td>Showing them to your partner in the app and widget (see <a href="#photos">Section 2</a>)</td>
                         <td>Yes</td>
                     </tr>
                     <tr>
@@ -112,7 +197,7 @@
             </table>
         </div>
 
-        <h3>2.1 Account information</h3>
+        <h3>6.1 Account information</h3>
         <p>You need an account to use GymCrush. You can create one with an email address, with <strong>Sign in with Apple</strong>, or with <strong>Sign in with Google</strong>. We store:</p>
         <ul>
             <li>Your email address, used for sign-in, account recovery and support. If you use Sign in with Apple and choose <em>Hide My Email</em>, we only ever receive Apple's private relay address — we never see your real one.</li>
@@ -121,7 +206,7 @@
         </ul>
         <p>We do not receive your Apple or Google password. Those providers confirm your identity to us and nothing more.</p>
 
-        <h3>2.2 Couple and partner data</h3>
+        <h3>6.2 Couple and partner data</h3>
         <p>GymCrush is built for two people. When you pair with a partner, the following is shared between the two accounts, because the shared game cannot work otherwise:</p>
         <ul>
             <li>Your invite link or code and the resulting partner relationship</li>
@@ -133,17 +218,7 @@
         </ul>
         <p><strong>Your partner cannot see your email address, your password, your payment details or your analytics data.</strong></p>
 
-        <h3 id="photos">2.3 Photos you send to your partner</h3>
-        <p>GymCrush lets you take a photo in the app and send it to your partner as a "moment". This is optional — the app works without ever taking one.</p>
-        <ul>
-            <li><strong>Camera and photo library access.</strong> iOS asks your permission before the app can use your camera or save an image. You can refuse, or change your mind later in iOS Settings.</li>
-            <li><strong>Where photos go.</strong> Photos you send are uploaded to a private storage bucket hosted by Supabase in the United States, stored under your couple's identifier, and are readable only by you and your paired partner. Access is enforced by server-side storage policies, not just by the app.</li>
-            <li><strong>On your device.</strong> Recent moments are also cached on your device and in a shared app group container so the GymCrush home-screen widget can display them without re-downloading.</li>
-            <li><strong>Deletion.</strong> Photos are deleted when you delete your account, and you can remove moments in the app. Copies already cached on your partner's device are outside our control, in the same way any photo you send someone is.</li>
-        </ul>
-        <p>We do not scan, analyse, or use your photos for any purpose other than showing them to your partner. They are never used for advertising or for training machine-learning models.</p>
-
-        <h3 id="advertising">2.4 Advertising measurement</h3>
+        <h3 id="advertising">6.3 Advertising measurement</h3>
         <p>We advertise GymCrush, and we need to know which adverts actually work — otherwise we are paying for adverts nobody responds to. To measure that we use <strong>AppsFlyer</strong>, which records that an install happened and which campaign it came from.</p>
         <ul>
             <li><strong>The iOS tracking prompt.</strong> Early in onboarding, iOS asks whether GymCrush may track you. This is Apple's own dialog, not ours. If you allow it, your device's advertising identifier (IDFA) is used to match your install to the advert you saw. <strong>If you decline, we never receive your advertising identifier.</strong> AppsFlyer still receives the app-specific vendor identifier, your account identifier and the milestones listed below, so we can count installs, trials and purchases, but not the identifier that links you across other companies' apps. Which campaign your install came from is then reported only through Apple's aggregated SKAdNetwork measurement. Nothing about the app changes for you.</li>
@@ -151,33 +226,33 @@
             <li><strong>What is never shared.</strong> <strong>Your photos, your email address, your display name, your partner's identity, your questionnaire answers and what you actually do in the app day to day are never sent to AppsFlyer or to any advertising network.</strong> The only couple-related fact that leaves is that a pairing happened.</li>
         </ul>
 
-        <h3>2.5 Fitness and activity data</h3>
+        <h3>6.4 Fitness and activity data</h3>
         <p><strong>GymCrush does not connect to Apple Health / HealthKit and does not read any health data from your device.</strong> The only "fitness" data we hold is what you tell the app yourself: which daily challenges you marked as complete, and the streak and statistics derived from that. It is self-reported activity, not measured health data.</p>
 
-        <h3>2.6 Onboarding questionnaire</h3>
+        <h3>6.5 Onboarding questionnaire</h3>
         <p>During onboarding we ask a few questions about your goals and habits so the app can start you in a sensible place. Your answers are stored with your account. They are not shared with your partner and are not used for advertising.</p>
 
-        <h3>2.7 Notifications</h3>
+        <h3>6.6 Notifications</h3>
         <p>If you allow notifications, Apple issues a device token that we store so we can send the reminders you have enabled — for example when your shared streak is at risk or your partner has done something. You can turn notifications off at any time in the app or in iOS Settings, and we delete the token when you delete your account.</p>
 
-        <h3>2.8 Product analytics</h3>
+        <h3>6.7 Product analytics</h3>
         <p><strong>Provider:</strong> PostHog Inc., United States.</p>
         <p>We record usage events to understand how the app is used and to improve it: app opens, screen views, task completions, streak events, chest and reveal openings, shop and purchase events, onboarding steps, and errors.</p>
-        <p>To be precise about something that is easy to overstate: <strong>these events are linked to your account identifier — they are not anonymous.</strong> We use them to understand product behaviour and to debug problems. We do not use them to build advertising profiles, we do not sell them, and we do not combine them with data from other companies' apps or websites. PostHog is used for product analytics. Advertising measurement is handled separately through AppsFlyer, as described in section 2.4. GymCrush requests permission through Apple’s App Tracking Transparency prompt before accessing the advertising identifier.</p>
+        <p>To be precise about something that is easy to overstate: <strong>these events are linked to your account identifier — they are not anonymous.</strong> We use them to understand product behaviour and to debug problems. We do not use them to build advertising profiles, we do not sell them, and we do not combine them with data from other companies' apps or websites. PostHog is used for product analytics. Advertising measurement is handled separately through AppsFlyer, as described in section 6.3. GymCrush requests permission through Apple’s App Tracking Transparency prompt before accessing the advertising identifier.</p>
         <p><strong>Session replays.</strong> For a sample of app sessions, PostHog also records a replay: a sequence of screenshots of the GymCrush screens you use and where you tap, so we can see where the app is confusing or broken. Replays are masked on your device before anything is sent: <strong>text you type and all images — including the photos you share with your partner — are blanked out</strong> and never leave your phone. Other text shown on screen, such as your or your partner's display name, can appear in a replay. Replays are only recorded inside the GymCrush app, never in other apps, and are linked to your account identifier like the events above. We use them only to fix problems and improve the app.</p>
 
-        <h3>2.9 Subscriptions and purchases</h3>
+        <h3>6.8 Subscriptions and purchases</h3>
         <p><strong>Provider:</strong> RevenueCat Inc., United States.</p>
         <p>We use RevenueCat to manage premium entitlements, including couple ("pair") premium. It processes a customer identifier, purchase and renewal events, subscription status, and entitlement changes. We store a record of purchases granted to your account so that coins and items are delivered exactly once.</p>
         <p><strong>Your payment details are handled entirely by Apple.</strong> Card numbers and billing addresses are never sent to, seen by, or stored by us or by RevenueCat.</p>
 
-        <h3>2.10 Diagnostic and technical data</h3>
+        <h3>6.9 Diagnostic and technical data</h3>
         <p>To operate the service securely, our servers process ordinary technical information such as the IP address a request comes from, timestamps, and the app version. This is used for security, abuse prevention and debugging, and is not used to build a profile of you.</p>
 
-        <h3>2.11 This website</h3>
+        <h3>6.10 This website</h3>
         <p>This website sets <strong>no cookies</strong>, runs no analytics, and embeds no third-party scripts, fonts or trackers. Fonts and images are served from this site itself. That is why you are not seeing a cookie banner — there is nothing to consent to. Our host, Cloudflare, processes standard server logs to deliver the site and protect it from attack.</p>
 
-        <h2 id="how-we-use">3. How we use your data</h2>
+        <h2 id="how-we-use">7. How we use your data</h2>
         <ul>
             <li>Providing the core couples experience: pairing, the shared streak, the shared economy and collection</li>
             <li>Syncing progress across your devices and with your partner</li>
@@ -190,7 +265,7 @@
         </ul>
         <p>We do not use your data for automated decision-making or profiling that produces legal or similarly significant effects.</p>
 
-        <h2 id="legal-basis">4. Legal basis for processing (GDPR)</h2>
+        <h2 id="legal-basis">8. Legal basis for processing (GDPR)</h2>
         <p>If you are in the European Economic Area, the United Kingdom or Switzerland, we rely on the following legal bases under Article 6 GDPR:</p>
         <div class="table-wrap">
             <table>
@@ -215,7 +290,7 @@
                     </tr>
                     <tr>
                         <td>Advertising measurement (AppsFlyer)</td>
-                        <td>Consent — Art. 6(1)(a) — for the advertising identifier, given through the iOS tracking prompt and withdrawable at any time in iOS Settings → Privacy &amp; Security → Tracking. Legitimate interests — Art. 6(1)(f) — in knowing which of our adverts work, for the vendor identifier, account identifier and milestone events described in section 2.4</td>
+                        <td>Consent — Art. 6(1)(a) — for the advertising identifier, given through the iOS tracking prompt and withdrawable at any time in iOS Settings → Privacy &amp; Security → Tracking. Legitimate interests — Art. 6(1)(f) — in knowing which of our adverts work, for the vendor identifier, account identifier and milestone events described in section 6.3</td>
                     </tr>
                     <tr>
                         <td>Keeping records required by tax or consumer law</td>
@@ -224,10 +299,10 @@
                 </tbody>
             </table>
         </div>
-        <p>Where we rely on legitimate interests, we have considered your rights and freedoms and limited the processing accordingly. You may object at any time (see <a href="#your-rights">Section 8</a>).</p>
+        <p>Where we rely on legitimate interests, we have considered your rights and freedoms and limited the processing accordingly. You may object at any time (see <a href="#your-rights">Section 3</a>).</p>
 
-        <h2 id="sharing">5. Who we share data with</h2>
-        <p><strong>We do not sell, rent or trade your personal data, and we have never done so.</strong> We share it only with your chosen partner, as described above, and with the following processors, who act on our instructions:</p>
+        <h2 id="sharing">9. Who we share data with</h2>
+        <p><strong>We do not sell, rent or trade your personal data, and we have never done so.</strong> We share it only with your chosen partner, as described in this policy, and with the following processors, who act on our instructions:</p>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -279,90 +354,21 @@
         <p>Each provider publishes its own privacy policy: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase</a>, <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">PostHog</a>, <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">RevenueCat</a>, <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple</a>, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a>, <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a>.</p>
         <p>We may also disclose data where we are legally required to, or where it is necessary to establish, exercise or defend legal claims. If GymCrush is ever sold or merged, user data may transfer as part of that transaction; we would notify you and this policy would continue to apply until replaced.</p>
 
-        <h2 id="transfers">6. International transfers</h2>
+        <h2 id="transfers">10. International transfers</h2>
         <p>GymCrush is available worldwide and our providers process data in the <strong>United States</strong>. If you are in the EEA, UK or Switzerland, your data is therefore transferred outside your home region. These transfers are covered by the <strong>Standard Contractual Clauses</strong> adopted by the European Commission, as implemented in each provider's data processing agreement, together with the additional safeguards those providers describe. You can request a copy of the relevant safeguards by emailing us.</p>
 
-        <h2 id="security">7. How we protect your data</h2>
-        <ul>
-            <li>All traffic between the app and our servers is encrypted in transit with HTTPS/TLS.</li>
-            <li>Database access is restricted by row-level security, so an account can only reach its own data and the data of the partner it is paired with. Photo storage is protected by equivalent server-side policies.</li>
-            <li>Coin and item transactions are processed server-side so the shared economy cannot be manipulated from a modified client.</li>
-            <li>Secrets and API keys are held outside the app's source code.</li>
-        </ul>
-        <p>No system can be guaranteed perfectly secure, and we cannot promise absolute security. If a breach ever affects your personal data and poses a risk to your rights, we will notify the competent supervisory authority within 72 hours and notify you without undue delay where the law requires it.</p>
-
-        <h2 id="your-rights">8. Your rights and choices</h2>
-
-        <h3>8.1 Rights you can exercise</h3>
-        <p>Wherever you live, you can ask us to give you a copy of your data, correct it, or delete it. If you are in the EEA, UK or Switzerland you additionally have the rights to restrict processing, to data portability, and to object to processing based on legitimate interests.</p>
-        <p>To exercise any of these, email <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off-->. We respond within <strong>30 days</strong>. There is no charge, and we will not treat you differently for asking.</p>
-
-        <h3>8.2 Deleting your account</h3>
-        <p>You can delete your account at any time from inside the app: <strong>Menu → Settings → Data &amp; Privacy → Delete account</strong>. This deletes your account record, your profile, your photos, your push token and your personal game data, and resets your analytics identifier.</p>
-        <p>Your uploaded photos are removed from our storage when you delete your account. Photos uploaded by your partner belong to their account and are handled under the retention rules below. Copies someone has saved outside GymCrush cannot be removed by us. We may retain limited records where the law requires it, such as purchase records kept for tax purposes.</p>
-        <p><strong>Deleting your account does not cancel your subscription.</strong> Cancel that separately in <em>iOS Settings → your name → Subscriptions</em>, or Apple will keep billing you.</p>
-
-        <h3>8.3 Unpairing</h3>
-        <p>You can unpair from a partner in the app. Unpairing stops any further sharing of new activity between the two accounts.</p>
-
-        <h3>8.4 Permissions</h3>
-        <p>Notifications, camera and photo library access are all optional and controlled by iOS. You can grant or revoke each of them at any time in <em>iOS Settings → GymCrush</em>.</p>
-
-        <h3>8.5 Complaints</h3>
-        <p>If you are in the EEA, UK or Switzerland and you think we have handled your data improperly, we would like the chance to put it right — but you also have the right to complain to your local data protection authority. Ours is the French CNIL: <a href="https://www.cnil.fr/en/contact-cnil" target="_blank" rel="noopener noreferrer">cnil.fr</a>.</p>
-
-        <h2 id="retention">9. How long we keep data</h2>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Data</th>
-                        <th scope="col">Retention</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Account, profile and game data</td>
-                        <td>While your account exists; deleted on account deletion</td>
-                    </tr>
-                    <tr>
-                        <td>Photos sent to your partner</td>
-                        <td>Your uploaded photos are removed when you delete them or delete your account. <strong>When a pair ends, remaining photos are permanently deleted after 30 days.</strong> Copies saved outside GymCrush are outside our control.</td>
-                    </tr>
-                    <tr>
-                        <td>Push token</td>
-                        <td>Until notifications are disabled or the account is deleted</td>
-                    </tr>
-                    <tr>
-                        <td>Analytics events</td>
-                        <td>Per PostHog's retention policy; identifier reset on account deletion</td>
-                    </tr>
-                    <tr>
-                        <td>Session replays</td>
-                        <td>Per PostHog's retention policy; identifier reset on account deletion</td>
-                    </tr>
-                    <tr>
-                        <td>Purchase and subscription records</td>
-                        <td>For the subscription relationship, then as long as tax and accounting law requires</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p><strong>Our commitment on your photos.</strong> Photos are stored on infrastructure we operate, so we are technically capable of opening them. We commit to only ever doing so in two situations: when someone reports a photo to us through the app and we have to review it, or when we are legally compelled to. We do not browse them, we build no tool that displays them to us, and we never use them to improve the product, to advertise, or to train machine-learning models. If you would rather this were impossible rather than promised, the honest answer is that end-to-end encryption would also make it impossible for us to act on a report about harmful content &mdash; including content involving a minor &mdash; and we have chosen to keep that ability.</p>
-
-        <h2 id="children">10. Children</h2>
+        <h2 id="children">11. Children</h2>
         <p>GymCrush is not directed at children. You must be at least <strong>13 years old</strong> to use it, and in countries that set a higher age for consenting to online services without a parent — for example <strong>15 in France</strong>, and 16 in several other EU countries — you must be at least that age, or have your parent or guardian's consent.</p>
         <p>We do not knowingly collect data from children below these ages. If you believe a child has given us personal data, email <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off--> and we will delete the account and its data promptly.</p>
 
-        <h2 id="california">11. California and other US state privacy rights</h2>
+        <h2 id="california">12. California and other US state privacy rights</h2>
         <p>If you are a resident of California, Colorado, Connecticut, Virginia or another US state with a comprehensive privacy law, you have the right to know what personal information we collect and why, to request a copy of it, to correct it, and to request its deletion. You may also appeal a refusal.</p>
-        <p><strong>We do not sell your personal information.</strong> The only personal data that reaches advertising networks is the campaign measurement described in section 2.4 — install, trial, purchase and pairing events — and it reaches those networks linked to you individually only if you allow tracking in the iOS prompt. You can withdraw that permission at any time in iOS Settings → Privacy &amp; Security → Tracking. We do not discriminate against anyone for exercising these rights. To make a request, email <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off-->.</p>
+        <p><strong>We do not sell your personal information.</strong> The only personal data that reaches advertising networks is the campaign measurement described in section 6.3 — install, trial, purchase and pairing events — and it reaches those networks linked to you individually only if you allow tracking in the iOS prompt. You can withdraw that permission at any time in iOS Settings → Privacy &amp; Security → Tracking. We do not discriminate against anyone for exercising these rights. To make a request, email <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off-->.</p>
 
-        <h2 id="changes">12. Changes to this policy</h2>
+        <h2 id="changes">13. Changes to this policy</h2>
         <p>We may update this policy as the app changes. We will post the new version here and update the "Last updated" date. If a change materially affects how we use your data, we will tell you in the app before it takes effect, and where the law requires it we will ask for your consent.</p>
 
-        <h2 id="contact">13. Contact</h2>
+        <h2 id="contact">14. Contact</h2>
         <ul>
             <li><strong>Data controller:</strong> Antoine Gosset, France</li>
             <li><strong>Email:</strong> <!--email_off--><a href="mailto:support@getgymcrush.com">support@getgymcrush.com</a><!--/email_off--></li>

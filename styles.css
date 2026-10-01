@@ -281,6 +281,53 @@ header {
     margin-bottom: 0;
 }
 
+/* "The short version" at the top of the privacy policy. */
+.summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 30px;
+    margin: 8px 0 12px;
+}
+
+.content .summary-title {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0 0 14px;
+}
+
+.content .summary ul {
+    list-style: none;
+    margin: 0;
+}
+
+.content .summary li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+}
+
+.content .summary li:last-child {
+    margin-bottom: 0;
+}
+
+.content .summary li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.62em;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.content .note {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
 /* Visible only to screen readers — used for table captions that would be
    redundant on screen next to the heading above them. */
 .sr-only {

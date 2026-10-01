@@ -115,6 +115,78 @@
             object-fit: cover;
         }
 
+        /* YouTube-style scrubber: appears on hover, click or drag to seek. */
+        .scrub {
+            position: absolute;
+            left: 26px;
+            right: 26px;
+            bottom: 6px;
+            padding: 12px 0;
+            cursor: pointer;
+            touch-action: none;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .phone:hover .scrub,
+        .scrub:focus-visible,
+        .scrub.dragging {
+            opacity: 1;
+        }
+
+        @media (hover: none) {
+            .scrub {
+                opacity: 1;
+            }
+        }
+
+        .scrub-track {
+            position: relative;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 1px 4px rgba(16, 35, 84, 0.25);
+            transition: height 0.15s;
+        }
+
+        .scrub:hover .scrub-track,
+        .scrub.dragging .scrub-track {
+            height: 6px;
+        }
+
+        .scrub-fill {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 0;
+            border-radius: inherit;
+            background: var(--primary);
+        }
+
+        .scrub-fill::after {
+            content: "";
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            margin-top: -6px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 0 2px #FFF;
+            transform: scale(0);
+            transition: transform 0.15s;
+        }
+
+        .scrub:hover .scrub-fill::after,
+        .scrub.dragging .scrub-fill::after,
+        .scrub:focus-visible .scrub-fill::after {
+            transform: scale(1);
+        }
+
+        .scrub:focus-visible {
+            outline: none;
+        }
+
         .play-toggle {
             position: absolute;
             right: -14px;
@@ -248,80 +320,47 @@
             margin-top: 36px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 20px;
             list-style: none;
         }
 
         .steps li {
-            border-top: 1px solid var(--border);
-            padding-top: 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 28px 28px 30px;
+        }
+
+        .steps img {
+            display: block;
+            height: 112px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            margin-bottom: 22px;
         }
 
         .step-num {
             font-family: var(--display);
             font-weight: 900;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--primary);
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .steps h3 {
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 1.35;
+            font-family: var(--display);
+            font-size: 21px;
+            font-weight: 900;
+            letter-spacing: -0.2px;
+            line-height: 1.25;
             margin-bottom: 8px;
         }
 
         .steps p {
             font-size: 15.5px;
-            line-height: 1.65;
-            color: var(--text-body);
-        }
-
-        .privacy-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 44px;
-            display: grid;
-            grid-template-columns: 0.9fr 2fr;
-            gap: 48px;
-        }
-
-        .privacy-card .section-title {
-            font-size: 30px;
-        }
-
-        .privacy-card .more {
-            display: inline-block;
-            margin-top: 16px;
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--primary-dark);
-            text-decoration: none;
-        }
-
-        .privacy-card .more:hover {
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .privacy-points {
-            list-style: none;
-            display: grid;
-            gap: 22px;
-        }
-
-        .privacy-points h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .privacy-points p {
-            font-size: 15px;
-            line-height: 1.65;
+            line-height: 1.6;
             color: var(--text-body);
         }
 
@@ -367,13 +406,7 @@
 
             .steps {
                 grid-template-columns: 1fr;
-                gap: 28px;
-            }
-
-            .privacy-card {
-                grid-template-columns: 1fr;
-                gap: 28px;
-                padding: 32px 26px;
+                gap: 14px;
             }
         }
 
@@ -456,7 +489,6 @@
         <nav aria-label="Main">
             <ul class="nav-links">
                 <li><a href="support.html">Support</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
             </ul>
         </nav>
     </header>
@@ -479,6 +511,9 @@
                 <video id="preview" src="media/preview.mp4" poster="media/preview-poster.webp" width="600" height="1300"
                        autoplay muted loop playsinline preload="metadata"
                        aria-label="A short tour of GymCrush: the home screen, daily challenges, the shop, a mascot hatching and a moment sent to your partner"></video>
+                <div class="scrub" id="previewScrub" role="slider" tabindex="0" aria-label="Video position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="scrub-track"><div class="scrub-fill" id="previewFill"></div></div>
+                </div>
                 <button class="play-toggle" id="previewToggle" type="button" aria-label="Pause video">
                     <svg class="icon-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.6" height="12" rx="1.2"/><rect x="8.4" y="1" width="3.6" height="12" rx="1.2"/></svg>
                     <svg class="icon-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.8v10.4c0 .8.9 1.3 1.6.8l8-5.2c.6-.4.6-1.2 0-1.6l-8-5.2C3.9.5 3 1 3 1.8z"/></svg>
@@ -510,44 +545,24 @@
             <h2 class="section-title" id="how-title">How it works</h2>
             <ol class="steps">
                 <li>
+                    <img src="assets/stickers/pair.webp" alt="" width="360" height="229" loading="lazy">
                     <span class="step-num" aria-hidden="true">01</span>
                     <h3>Pair up</h3>
                     <p>Send your partner an invite link or a 6-character code. One tap and you're linked.</p>
                 </li>
                 <li>
+                    <img src="assets/stickers/daily.webp" alt="" width="301" height="240" loading="lazy">
                     <span class="step-num" aria-hidden="true">02</span>
                     <h3>Do your three</h3>
                     <p>Pick challenges that fit your day. Your progress and theirs count toward the same goal.</p>
                 </li>
                 <li>
+                    <img src="assets/stickers/together.webp" alt="" width="352" height="240" loading="lazy">
                     <span class="step-num" aria-hidden="true">03</span>
                     <h3>Keep the streak alive</h3>
                     <p>Hit the goal together and your streak grows. On a rough day, the other one can carry it.</p>
                 </li>
             </ol>
-        </section>
-
-        <section class="wrap" aria-labelledby="privacy-title">
-            <div class="privacy-card">
-                <div>
-                    <h2 class="section-title" id="privacy-title">Private by design</h2>
-                    <a class="more" href="privacy.html">Read the privacy policy →</a>
-                </div>
-                <ul class="privacy-points">
-                    <li>
-                        <h3>No ads in the app</h3>
-                        <p>GymCrush never shows adverts and never sells your data. We do measure which of our own adverts bring people in — iOS asks your permission first, and saying no changes nothing in the app.</p>
-                    </li>
-                    <li>
-                        <h3>Your photos stay between you two</h3>
-                        <p>Moments are readable only by you and your partner, enforced on the server. We never scan them or train models on them.</p>
-                    </li>
-                    <li>
-                        <h3>No Apple Health access</h3>
-                        <p>We never connect to Apple Health. The only activity data we hold is what you tell the app yourself.</p>
-                    </li>
-                </ul>
-            </div>
         </section>
 
         <section class="wrap closing" aria-labelledby="closing-title">

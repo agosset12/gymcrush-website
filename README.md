@@ -12,7 +12,7 @@ Pages at **https://gymcrush.pages.dev**.
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Landing page — hero with the App Preview, screenshot strip, how-it-works, privacy stance |
+| `index.html` | Landing page — hero with the App Preview, screenshot strip, how-it-works |
 | `privacy.html` | Privacy policy — **linked from inside the app**, must never 404 |
 | `terms.html` | Terms of Use / EULA — **linked from inside the app**, must never 404 |
 | `support.html` | FAQ, troubleshooting, contact — used as the App Store support URL |
