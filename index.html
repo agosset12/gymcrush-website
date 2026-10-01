@@ -312,60 +312,8 @@
             color: var(--text);
         }
 
-        .steps-section {
-            padding-bottom: 104px;
-        }
-
-        .steps {
-            margin-top: 36px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            list-style: none;
-        }
-
-        .steps li {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 28px 28px 30px;
-        }
-
-        .steps img {
-            display: block;
-            height: 112px;
-            width: auto;
-            max-width: 100%;
-            object-fit: contain;
-            margin-bottom: 22px;
-        }
-
-        .step-num {
-            font-family: var(--display);
-            font-weight: 900;
-            font-size: 14px;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .steps h3 {
-            font-family: var(--display);
-            font-size: 21px;
-            font-weight: 900;
-            letter-spacing: -0.2px;
-            line-height: 1.25;
-            margin-bottom: 8px;
-        }
-
-        .steps p {
-            font-size: 15.5px;
-            line-height: 1.6;
-            color: var(--text-body);
-        }
-
         .closing {
-            padding-top: 112px;
+            padding-top: 64px;
             padding-bottom: 104px;
             text-align: center;
             display: flex;
@@ -404,10 +352,6 @@
                 margin-right: auto;
             }
 
-            .steps {
-                grid-template-columns: 1fr;
-                gap: 14px;
-            }
         }
 
         @media (max-width: 600px) {
@@ -463,12 +407,8 @@
                 padding-bottom: 64px;
             }
 
-            .steps-section {
-                padding-bottom: 72px;
-            }
-
             .closing {
-                padding-top: 80px;
+                padding-top: 40px;
                 padding-bottom: 72px;
             }
 
@@ -539,30 +479,6 @@
                 <img src="screenshots/07.webp" width="660" height="1434" alt="Build habits and grow your collection of mascots and themes" loading="lazy">
                 <img src="screenshots/08.webp" width="660" height="1434" alt="Your partner on your home screen, through the GymCrush widget" loading="lazy">
             </div>
-        </section>
-
-        <section class="wrap steps-section" aria-labelledby="how-title">
-            <h2 class="section-title" id="how-title">How it works</h2>
-            <ol class="steps">
-                <li>
-                    <img src="assets/stickers/pair.webp" alt="" width="360" height="229" loading="lazy">
-                    <span class="step-num" aria-hidden="true">01</span>
-                    <h3>Pair up</h3>
-                    <p>Send your partner an invite link or a 6-character code. One tap and you're linked.</p>
-                </li>
-                <li>
-                    <img src="assets/stickers/daily.webp" alt="" width="301" height="240" loading="lazy">
-                    <span class="step-num" aria-hidden="true">02</span>
-                    <h3>Do your three</h3>
-                    <p>Pick challenges that fit your day. Your progress and theirs count toward the same goal.</p>
-                </li>
-                <li>
-                    <img src="assets/stickers/together.webp" alt="" width="352" height="240" loading="lazy">
-                    <span class="step-num" aria-hidden="true">03</span>
-                    <h3>Keep the streak alive</h3>
-                    <p>Hit the goal together and your streak grows. On a rough day, the other one can carry it.</p>
-                </li>
-            </ol>
         </section>
 
         <section class="wrap closing" aria-labelledby="closing-title">
