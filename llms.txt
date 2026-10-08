@@ -1,0 +1,42 @@
+# GymCrush
+
+> GymCrush is an iOS fitness app for couples with shared daily challenges, one shared streak, and workout photos for each other.
+
+Status: Coming soon; not yet live on the App Store. Platform: iOS. Language: US English. Official website: https://getgymcrush.com/.
+
+## Verified product features
+
+- Both partners get the same daily challenges and share one streak.
+- Partner pushes report completed workouts, moments, dares, dare outcomes, and chosen stakes.
+- Team Assist merges both partners’ daily goals into one bar; a streak freeze is available.
+- Stakes are bets on the shared streak. Partners can send dares and moments (workout photos).
+- A lock-screen widget shows the partner’s photo.
+- Couples hatch mascots from Mascot Balls and have a 90-day reward path.
+- Annual subscription with a 3-day trial; no price is stated here.
+
+## Official pages
+
+- [Home](https://getgymcrush.com/): Product overview and coming-soon status.
+- [Support](https://getgymcrush.com/support): Existing FAQ and contact details.
+- [Privacy](https://getgymcrush.com/privacy): Privacy policy.
+- [Terms](https://getgymcrush.com/terms): Terms of use.
+
+## Practical guides
+
+- [18 Couple Workout Challenges to Try Together](https://getgymcrush.com/couple-workout-challenges): Choose from 18 couple workout challenges, set fair rules, and build a sample week with walking, dancing, strength, and quieter options.
+- [How to Invite Your Boyfriend to Work Out With You](https://getgymcrush.com/get-boyfriend-to-work-out): A practical way to invite your boyfriend to work out: clear scripts, choices for common obstacles, and a one-week experiment you both agree to.
+- [Working Out Together at Different Fitness Levels](https://getgymcrush.com/different-fitness-levels): Plan a couples workout at different fitness levels with separate targets, a shared finish time, and examples for walking, classes, and the gym.
+- [A 12-Week Wedding Workout Plan for Couples](https://getgymcrush.com/wedding-workout-plan): A flexible 12-week wedding workout planning framework with a sample week, separate goals, rest days, and ways to handle busy wedding weeks.
+- [Long-Distance Couple Workouts: A Practical Weekly Plan](https://getgymcrush.com/long-distance-couple-workouts): Plan long-distance couple workouts with three schedule options, a time-zone worksheet, a sample week, and simple check-in messages.
+- [12 Gym Date Ideas for Couples](https://getgymcrush.com/gym-date-ideas): Twelve gym date ideas with preparation tips, a simple date itinerary, and alternatives for different fitness levels or crowded gyms.
+- [A 30-Day Couples Fitness Challenge Calendar](https://getgymcrush.com/30-day-couples-fitness-challenge): A complete 30-day couples fitness challenge with activity choices, rest days, weekly reviews, and a simple way to restart after a missed day.
+- [Accountability Partner Apps: A Couples Selection Guide](https://getgymcrush.com/accountability-partner-apps): Choose an accountability partner app using a practical checklist, four tool types, a seven-day trial scorecard, and a shared-note fallback.
+- [Best Couple Workout Apps: Choose by How You Train](https://getgymcrush.com/best-couple-workout-apps): Compare Hevy, Strava, and Apple Fitness+ by verified sharing and workout features, plus a clearly labeled upcoming couples fitness app.
+- [A Weekly Couple Workout Planner You Can Copy](https://getgymcrush.com/weekly-couple-workout-planner): Copy a weekly couple workout planner with separate plans, shared appointments, fallback options, and a five-minute Sunday review.
+
+These guides contain original planning suggestions, separate from the app’s features. No weight-loss results, body outcomes, user counts, ratings, or customer testimonials are claimed.
+
+## Identity
+
+- TikTok: https://www.tiktok.com/@getgymcrush
+- Future App Store listing (not yet live): https://apps.apple.com/app/apple-store/id6766544775

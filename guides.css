@@ -1,0 +1,43 @@
+/* Editorial layouts reuse the site's local fonts, tokens and badge. */
+.guide { --display: 'Nunito', var(--font); max-width: 800px; overflow-wrap: anywhere; }
+.guide h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 18px 0 22px; }
+.guide h2 { font-family: var(--display); font-weight: 900; font-size: 26px; line-height: 1.25; }
+.guide .guide-kicker { margin-bottom: 12px; font-weight: 600; }
+.guide .guide-intro { font-size: 19px; line-height: 1.65; }
+.guide .guide-byline { font-size: 13px; color: var(--text-muted); margin: 20px 0 28px; }
+.guide-contents { border-block: 1px solid var(--border); padding: 20px 0 8px; margin: 26px 0 36px; }
+.guide-contents ul { list-style: none; margin-left: 0; }
+.guide li { margin-bottom: 14px; }
+.guide blockquote { border-left: 3px solid var(--primary); margin: 22px 0; padding-left: 20px; }
+.guide-table { margin: 24px 0; }
+.guide table { min-width: 0; table-layout: fixed; font-size: 14px; }
+.guide caption { text-align: left; font-weight: 600; margin-bottom: 10px; }
+.guide th { white-space: normal; }
+.guide th, .guide td { padding: 12px 10px; overflow-wrap: anywhere; }
+.guide-option { border-block: 1px solid var(--border); margin-top: 42px; padding: 28px 0; }
+.guide-option h2 { margin-top: 0; }
+.guide-option .store-badge { margin-top: 12px; color: #FFF; text-decoration: none; }
+.guide-related { margin-top: 36px; }
+.has-guides { flex-wrap: wrap; }
+.guide-directory { flex-basis: 100%; text-align: left; margin-bottom: 24px; }
+.guide-directory h2 { font-family: var(--display); font-size: 28px; font-weight: 900; }
+.guide-directory p { margin: 8px 0 18px; color: var(--text-body); }
+.guide-directory ul { columns: 2; column-gap: 40px; list-style: none; }
+.guide-directory li { break-inside: avoid; margin-bottom: 12px; }
+.guide-directory a { color: var(--text); text-underline-offset: 3px; }
+@media (max-width: 600px) {
+  .guide { padding-inline: 20px; }
+  .guide h2 { font-size: 23px; }
+  .guide .guide-intro { font-size: 17px; }
+  .guide table { font-size: 14px; }
+  .guide th, .guide td { padding: 10px 6px; }
+  .guide-directory ul { columns: 1; }
+}
+@media print {
+  header, footer, .skip-link, .guide-contents, .guide-option, .guide-related { display: none; }
+  body { background: #FFF; }
+  .guide { max-width: none; padding: 0; }
+  .guide h2, .guide h1 { break-after: avoid; }
+  .guide tr { break-inside: avoid; }
+  .guide a { color: inherit; }
+}
