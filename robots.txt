@@ -1,7 +1,44 @@
+# Public guides are crawlable. Invite tokens and their fallback stay private.
+
 User-agent: *
 Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
 
-# Invite URLs carry a one-time pairing token — never index them.
+User-agent: GPTBot
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /invite
 Disallow: /invite/
 Disallow: /invite-landing.html
 
