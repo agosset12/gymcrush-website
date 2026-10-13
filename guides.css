@@ -2,6 +2,7 @@
 .guide { --display: 'Nunito', var(--font); max-width: 800px; overflow-wrap: anywhere; }
 .guide h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 18px 0 22px; }
 .guide h2 { font-family: var(--display); font-weight: 900; font-size: 26px; line-height: 1.25; }
+.guide h3 { font-family: var(--display); font-size: 20px; font-weight: 800; line-height: 1.3; margin: 26px 0 10px; }
 .guide .guide-kicker { margin-bottom: 12px; font-weight: 600; }
 .guide .guide-intro { font-size: 19px; line-height: 1.65; }
 .guide .guide-byline { font-size: 13px; color: var(--text-muted); margin: 20px 0 28px; }
@@ -14,10 +15,13 @@
 .guide caption { text-align: left; font-weight: 600; margin-bottom: 10px; }
 .guide th { white-space: normal; }
 .guide th, .guide td { padding: 12px 10px; overflow-wrap: anywhere; }
-.guide-option { border-block: 1px solid var(--border); margin-top: 42px; padding: 28px 0; }
+.guide-option { border-block: 1px solid var(--border); margin-top: 42px; padding: 28px 0; display: grid; grid-template-columns: minmax(0, 1fr) 190px; align-items: center; gap: 30px; }
 .guide-option h2 { margin-top: 0; }
 .guide-option .store-badge { margin-top: 12px; color: #FFF; text-decoration: none; }
+.guide-app-shot { display: block; width: 100%; height: auto; border-radius: 16px; }
 .guide-related { margin-top: 36px; }
+.guide-faq { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+.guide-faq h3 { margin-top: 24px; }
 .has-guides { flex-wrap: wrap; }
 .guide-directory { flex-basis: 100%; text-align: left; margin-bottom: 24px; }
 .guide-directory h2 { font-family: var(--display); font-size: 28px; font-weight: 900; }
@@ -31,6 +35,8 @@
   .guide .guide-intro { font-size: 17px; }
   .guide table { font-size: 14px; }
   .guide th, .guide td { padding: 10px 6px; }
+  .guide-option { grid-template-columns: 1fr; }
+  .guide-app-shot { max-width: 250px; margin-inline: auto; }
   .guide-directory ul { columns: 1; }
 }
 @media print {
