@@ -42,4 +42,22 @@ Disallow: /invite
 Disallow: /invite/
 Disallow: /invite-landing.html
 
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+User-agent: Claude-User
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /invite
+Disallow: /invite/
+Disallow: /invite-landing.html
+
 Sitemap: https://getgymcrush.com/sitemap.xml

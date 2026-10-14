@@ -3,9 +3,9 @@
 Marketing & legal site for **GymCrush**, the gamified fitness app for couples.
 
 Static site — plain HTML, no build step, no dependencies. Deployed to Cloudflare
-Pages at **https://gymcrush.pages.dev**.
+Pages at **https://getgymcrush.com**.
 
-> The canonical host is `gymcrush.pages.dev`. **`gymcrush.app` belongs to a third
+> The canonical host is `getgymcrush.com`. **`gymcrush.app` belongs to a third
 > party** — never point invite links, legal URLs or the AASA file at it.
 
 ## Pages
@@ -29,7 +29,8 @@ Two things break if this site does:
    Apple rejects builds with Sign in with Apple + auto-renewing subscriptions
    whose legal links 404.
 2. **Universal links.** `/.well-known/apple-app-site-association` is what lets
-   `https://gymcrush.pages.dev/invite/<token>` open the app.
+   `https://gymcrush.pages.dev/invite/<token>` open the app. That legacy invite
+   host remains an app compatibility detail; the website canonical is `getgymcrush.com`.
 
 ## Cloudflare Pages configuration
 
@@ -89,13 +90,35 @@ Preview re-encoded silent at 600px wide (H.264, CRF 25, faststart, ~3 MB);
 
 ## Going live
 
-The App Store ID is **6766544775**. When the listing goes public, in `index.html`:
+The App Store ID is **6766544775**. Keep the coming-soon state until the listing
+is live. Use the shared generator's launch command below so the homepage and all
+guide badges switch together. The invite landing page already links to the listing.
 
-1. Uncomment the `apple-itunes-app` smart-banner meta tag in `<head>`.
-2. Swap the inert `.store-badge` `<div>` for the `<a>` kept in the comment beside it.
+## Guides
 
-Both are marked with a `LAUNCH DAY` comment block. Nothing else needs to change —
-`invite-landing.html` already links to the real listing.
+The guide pages are generated from the private
+`~/Desktop/GymCrush/marketing/website-guides/` directory. **Never hand-edit the
+compiled guide HTML.** The same generator maintains the homepage guide list,
+sitemap, llms.txt, and the audited support FAQ JSON-LD. Keep all generator source
+outside this public repository.
+
+Regenerate (defaults to `~/Desktop/gymcrush-website`):
+
+```sh
+python3 ~/Desktop/GymCrush/marketing/website-guides/build_guides.py
+```
+
+For an alternate checkout, append `--root /path/to/website-worktree`.
+See the private generator README for local serving and verification commands.
+
+After confirming the listing is live, switch all badges and availability copy:
+
+```sh
+python3 ~/Desktop/GymCrush/marketing/website-guides/build_guides.py --launch
+```
+
+Use the same `--root` override when launching from a worktree. This command only
+writes local files; Antoine reviews and publishes the branch separately.
 
 ## Campaign links (install attribution, no tracking)
 
