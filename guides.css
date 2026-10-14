@@ -47,3 +47,16 @@
   .guide tr { break-inside: avoid; }
   .guide a { color: inherit; }
 }
+
+/* Shared guide navigation and discovery pages. */
+.guide-breadcrumb { font-size: 13px; line-height: 1.6; margin-bottom: 24px; }
+.guide-breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 10px; }
+.guide-breadcrumb li { margin: 0; }
+.guide-breadcrumb li + li::before { content: "›"; margin-right: 10px; }
+.guide-breadcrumb li:last-child { flex-basis: 100%; }
+.guide-byline a { color: var(--text); }
+.hub-guides { padding-left: 22px; }
+.hub-guides li { margin-bottom: 24px; }
+.hub-guides a { font-weight: 600; }
+.hub-guides p { margin-top: 6px; }
+.about-confirm { border-left: 3px solid var(--primary); padding-left: 16px; }

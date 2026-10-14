@@ -17,6 +17,8 @@ Status: Coming soon; not yet live on the App Store. Platform: iOS. Language: US 
 ## Official pages
 
 - [Home](https://getgymcrush.com/): Product overview and coming-soon status.
+- [Guides](https://getgymcrush.com/guides): Plans and ideas grouped by situation.
+- [About](https://getgymcrush.com/about): Founder, purpose, and contact.
 - [Support](https://getgymcrush.com/support): Existing FAQ and contact details.
 - [Privacy](https://getgymcrush.com/privacy): Privacy policy.
 - [Terms](https://getgymcrush.com/terms): Terms of use.
