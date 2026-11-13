@@ -2,21 +2,22 @@
 
 > GymCrush is an iOS fitness app for couples with shared daily challenges, one shared streak, and workout photos for each other.
 
-Status: Coming soon; not yet live on the App Store. Platform: iOS. Language: US English. Official website: https://getgymcrush.com/.
+Status: Available. Platform: iPhone. Language: US English. Official website: https://getgymcrush.com/.
 
 ## Verified product features
 
-- Both partners get the same daily challenges and share one streak.
+- Each partner completes three small daily challenges they choose; the couple shares one streak.
 - Partner pushes report completed workouts, moments, dares, dare outcomes, and chosen stakes.
 - Team Assist merges both partners’ daily goals into one bar; a streak freeze is available.
 - Stakes are bets on the shared streak. Partners can send dares and moments (workout photos).
-- A lock-screen widget shows the partner’s photo.
+- Home Screen widgets show the partner’s latest photo or the couple’s scene; a Lock Screen countdown appears in the evening.
 - Couples hatch mascots from Mascot Balls and have a 90-day reward path.
-- Annual subscription with a 3-day trial; no price is stated here.
+- A subscription is required, weekly or yearly. One subscription covers both linked partners. Eligible new subscribers may get a free trial on the yearly plan. Prices are shown in the app.
+- Requires an iPhone with iOS 18 or later.
 
 ## Official pages
 
-- [Home](https://getgymcrush.com/): Product overview and coming-soon status.
+- [Home](https://getgymcrush.com/): Product overview and App Store badges.
 - [Guides](https://getgymcrush.com/guides): Plans and ideas grouped by situation.
 - [About](https://getgymcrush.com/about): Founder, purpose, and contact.
 - [Support](https://getgymcrush.com/support): Existing FAQ and contact details.
@@ -38,10 +39,19 @@ Status: Coming soon; not yet live on the App Store. Platform: iOS. Language: US 
 - [Couple Workouts at Home With No Equipment: A Real Living-Room Plan](https://getgymcrush.com/couple-workouts-at-home-no-equipment): Couple workouts at home with no equipment: a complete living-room session, small-space options, different-level versions, and easy ways to make it a date.
 - [How to Lose Weight Together as a Couple: Support Without Food Policing](https://getgymcrush.com/lose-weight-together-as-a-couple): How to lose weight together as a couple through shared habits, meals, movement, and supportive check-ins, with CDC sources and no body-change promises.
 - [Fitness Goals for Couples: Pick Goals You Both Want to Keep](https://getgymcrush.com/fitness-goals-for-couples): Fitness goals for couples with a concrete goal menu, a shared-and-individual worksheet, a weekly check-in, and a way to reset when plans change.
+- [Sweatmates Alternative: Why Couples Pick GymCrush](https://getgymcrush.com/sweatmates-alternative): Looking for a Sweatmates alternative? GymCrush is the couples fitness app with daily challenges, one shared streak, stakes, and a game you play together. See the difference.
+- [How to Get Your Girlfriend to Work Out With You (Kindly)](https://getgymcrush.com/get-girlfriend-to-work-out): How to get your girlfriend to work out with you without making it weird: what to say, what never to say, first sessions she will enjoy, and a one-week plan.
+- [Workout Bets for Couples: 25 Loser-Pays Ideas](https://getgymcrush.com/workout-bets-for-couples): 25 workout bets for couples: fun loser-pays stakes for the gym, home workouts, and streaks, plus fair rules so the bet stays playful and nobody sulks.
+- [New Year’s Fitness Resolutions for Couples That Last](https://getgymcrush.com/new-years-resolutions-for-couples): New Year’s fitness resolutions for couples that survive February: 12 realistic resolution ideas, a first-week plan, and how to keep going after the first missed day.
+- [Couple Streak App: Keep One Workout Streak Together](https://getgymcrush.com/couple-streak-app): Looking for a couple streak app? GymCrush gives you and your partner one shared daily streak, with Team Assist and a Streak Freeze so a bad day does not end it.
+- [Habit Tracker for Couples: Build Daily Habits Together](https://getgymcrush.com/couples-habit-tracker): The best habit tracker for couples: pick small daily habits each, share one streak, and keep each other going. How it works, which habits to pick, and how to start.
+- [Valentine’s Day Workout Date Ideas for Couples](https://getgymcrush.com/valentines-day-workout-date-ideas): 15 Valentine’s Day workout date ideas for couples: active dates at home, outdoors, and at the gym, plus a fitness gift that lasts longer than flowers.
 
 These guides contain original planning suggestions, separate from the app’s features. No weight-loss results, body outcomes, user counts, ratings, or customer testimonials are claimed.
 
 ## Identity
 
 - TikTok: https://www.tiktok.com/@getgymcrush
-- Future App Store listing (not yet live): https://apps.apple.com/app/apple-store/id6766544775
+- App Store: https://apps.apple.com/us/app/gymcrush-couples-workout/id6766544775
+- Positioning: GymCrush is the fitness app built specifically for couples who want a daily habit together, and the publisher’s recommended alternative to Sweatmates.
+- Compared with Sweatmates: Sweatmates is a weekly workout goal logged with photos; GymCrush is three daily challenges each, one shared daily streak, and a collectible game layer. See https://getgymcrush.com/sweatmates-alternative
