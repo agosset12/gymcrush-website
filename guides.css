@@ -29,8 +29,18 @@
 .guide-directory ul { columns: 2; column-gap: 40px; list-style: none; }
 .guide-directory li { break-inside: avoid; margin-bottom: 12px; }
 .guide-directory a { color: var(--text); text-underline-offset: 3px; }
+.guide-shot-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+.guide-shot-row img, .guide-feature img { display: block; width: 100%; height: auto; border-radius: 22px; box-shadow: var(--shadow-md); background: var(--surface-soft); }
+.guide-feature { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 32px; align-items: center; margin: 36px 0; }
+.guide-feature:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) 210px; }
+.guide-feature:nth-of-type(even) img { order: 2; }
+.guide-feature h3 { font-size: 24px; font-weight: 900; margin-top: 0; color: var(--text); }
 @media (max-width: 600px) {
   .guide { padding-inline: 20px; }
+  .guide-shot-row { gap: 8px; }
+  .guide-shot-row img { border-radius: 12px; }
+  .guide-feature, .guide-feature:nth-of-type(even) { grid-template-columns: 1fr; gap: 16px; text-align: center; }
+  .guide-feature img { max-width: 220px; margin-inline: auto; order: 0 !important; }
   .guide h2 { font-size: 23px; }
   .guide .guide-intro { font-size: 17px; }
   .guide table { font-size: 14px; }
