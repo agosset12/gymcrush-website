@@ -35,7 +35,12 @@
 .guide-feature:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) 210px; }
 .guide-feature:nth-of-type(even) img { order: 2; }
 .guide-art { display: block; width: 100%; height: auto; margin: 26px 0; border-radius: 22px; box-shadow: var(--shadow-md); }
-.guide-hero { margin: 4px 0 30px; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 62%; }
+.guide-hero { margin: 4px 0 24px; }
+.guide-breadcrumb li:last-child { display: none; }
+.guide-cta-top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 0 0 30px; }
+.guide-cta-top span { font-size: 14.5px; color: var(--text-muted); margin: 0; }
+.guide .guide-pill { display: inline-block; background: var(--primary); color: #FFF; font-family: var(--display); font-weight: 900; font-size: 16px; padding: 12px 22px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-md); transition: transform 0.15s, background 0.2s; }
+.guide .guide-pill:hover { background: var(--primary-dark); color: #FFF; transform: translateY(-1px); }
 .guide-art.plain, .guide-feature img.plain { border-radius: 0; box-shadow: none; background: none; }
 .guide-art.narrow { max-width: 460px; margin-inline: auto; }
 .guide-feature.art { grid-template-columns: 300px minmax(0, 1fr); }
