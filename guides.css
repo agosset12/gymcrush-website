@@ -111,3 +111,8 @@ body:has(.app-fab) footer { padding-bottom: 96px; }
 .hub-card-big strong { font-size: 22px; }
 .hub-by { margin-top: 44px; font-size: 14px; color: var(--text-muted); }
 @media (max-width: 760px) { .hub-grid-3 { grid-template-columns: 1fr; } .hub-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } .hub-card strong { font-size: 16px; margin: 8px 12px 0; } .hub-card .hub-tag { margin: 12px 12px 0; font-size: 11px; } .hub-card .hub-hook { font-size: 13px; margin: 5px 12px 14px; } .hub-card-big strong { font-size: 20px; } }
+
+/* Caption lists: two tidy columns of short lines. */
+.guide ul.caption-list { list-style: none; margin: 14px 0 22px; columns: 2; column-gap: 26px; }
+.guide ul.caption-list li { break-inside: avoid; margin: 0 0 10px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; color: var(--text); }
+@media (max-width: 600px) { .guide ul.caption-list { columns: 1; } }
